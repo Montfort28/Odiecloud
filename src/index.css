@@ -1,0 +1,376 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans leading-relaxed;
+  color: #0f172a;
+  background: 
+    radial-gradient(circle at top left, rgba(12, 127, 199, 0.08), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.08), transparent 22%),
+    #f5fbff;
+  margin: 0;
+}
+
+a {
+  @apply no-underline;
+  color: inherit;
+}
+
+img {
+  @apply max-w-full block;
+}
+
+.container {
+  @apply w-full mx-auto px-4;
+  max-width: 1280px;
+}
+
+/* ============================================
+   MODERN BUTTON STYLES WITH ANIMATIONS
+   ============================================ */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-[18px] rounded-full font-bold border border-transparent transition-all duration-300 cursor-pointer relative overflow-hidden;
+  min-height: 48px;
+}
+
+/* Primary Button - Blue with advanced glow animation */
+.btn-primary {
+  @apply text-white;
+  background: linear-gradient(135deg, #086aa5, #0c7fc7);
+  box-shadow: 0 0 20px rgba(12, 127, 199, 0.15);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2.5s infinite;
+}
+
+.btn-primary:hover {
+  @apply -translate-y-1.5;
+  box-shadow: 0 8px 40px rgba(12, 127, 199, 0.35);
+  background: linear-gradient(135deg, #0c7fc7, #086aa5);
+}
+
+.btn-primary:active {
+  @apply -translate-y-0.5;
+  box-shadow: 0 0 30px rgba(12, 127, 199, 0.25);
+}
+
+/* Secondary Button - Modern outlined with gradient hover */
+.btn-secondary {
+  border: 2px solid rgba(12, 127, 199, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,252,255,0.9));
+  color: #086aa5;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  background: linear-gradient(90deg, transparent, rgba(83, 185, 248, 0.2), transparent);
+  animation: shimmer 2.5s infinite;
+}
+
+.btn-secondary:hover {
+  @apply -translate-y-1;
+  border-color: #0c7fc7;
+  box-shadow: 0 8px 30px rgba(12, 127, 199, 0.2);
+  background: linear-gradient(135deg, rgba(223, 242, 254, 0.8), rgba(255,255,255,0.95));
+  color: #044f7d;
+}
+
+.btn-secondary:active {
+  @apply -translate-y-0.5;
+}
+
+/* Ghost Button - Minimal with smooth transitions */
+.btn-ghost {
+  @apply transition-all duration-300;
+  background: transparent;
+  color: #28435f;
+  border: 1.5px solid rgba(12, 127, 199, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ghost::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(12, 127, 199, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-ghost:hover {
+  @apply -translate-y-0.5;
+  border-color: #0c7fc7;
+  box-shadow: 0 4px 20px rgba(12, 127, 199, 0.15);
+  background: rgba(223, 242, 254, 0.6);
+  color: #086aa5;
+}
+
+.btn-ghost:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   MODERN CARD STYLES WITH SMOOTH EFFECTS
+   ============================================ */
+
+.card {
+  @apply overflow-hidden transition-all duration-400 rounded-3xl;
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,255,255,0.9));
+  border: 1.5px solid rgba(12, 127, 199, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(12, 127, 199, 0.08);
+  animation: slideUp 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 3s infinite;
+  opacity: 0;
+}
+
+.card:hover {
+  @apply -translate-y-2;
+  box-shadow: 0 20px 40px rgba(12, 127, 199, 0.15);
+  border-color: rgba(83, 185, 248, 0.3);
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(248,252,255,0.98));
+}
+
+.card:hover::before {
+  opacity: 0.4;
+}
+
+.card-body {
+  @apply p-6 relative z-10;
+}
+
+.card h3 {
+  @apply m-0 mb-2.5 font-black tracking-tight;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.card p {
+  color: #587089;
+  font-size: 1rem;
+}
+
+.card li {
+  color: #587089;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card ul {
+  @apply mt-3.5 pl-4.5;
+}
+
+/* Modern Question Card with smooth expand animation */
+.q-card {
+  @apply overflow-hidden transition-all duration-400 cursor-pointer rounded-3xl;
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,252,255,0.9));
+  border: 1.5px solid rgba(12, 127, 199, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(12, 127, 199, 0.08);
+  animation: slideUp 0.6s ease-out;
+  padding: 28px;
+  position: relative;
+}
+
+.q-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(83, 185, 248, 0.1), transparent);
+  animation: shimmer 3s infinite;
+  opacity: 0;
+}
+
+.q-card:hover {
+  @apply -translate-y-1.5;
+  box-shadow: 0 15px 40px rgba(12, 127, 199, 0.15);
+  border-color: rgba(83, 185, 248, 0.4);
+}
+
+.q-card:hover::before {
+  opacity: 0.3;
+}
+
+.q-card h3 {
+  @apply m-0 font-black relative z-10;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.q-card-content {
+  @apply relative z-10;
+}
+
+/* ============================================
+   MODERN FORM STYLING
+   ============================================ */
+
+input, select, textarea {
+  @apply w-full rounded-3xl border transition-all duration-300;
+  border-color: rgba(12, 127, 199, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  min-height: 50px;
+  padding: 0 14px;
+  font-family: inherit;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(12, 127, 199, 0.05);
+  animation: slideUp 0.6s ease-out;
+}
+
+textarea {
+  min-height: 140px;
+  padding: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0c7fc7;
+  box-shadow: 
+    0 0 0 4px rgba(12, 127, 199, 0.15),
+    0 0 25px rgba(12, 127, 199, 0.25),
+    inset 0 0 10px rgba(12, 127, 199, 0.05);
+  background: rgba(255, 255, 255, 0.98);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+label {
+  @apply text-xs font-bold transition-colors duration-200;
+  color: #28435f;
+}
+
+/* ============================================
+   PILL/BADGE STYLES
+   ============================================ */
+
+.pill {
+  @apply inline-flex items-center justify-center px-2.5 text-xs font-black tracking-wider transition-all duration-200 rounded-full;
+  min-height: 30px;
+  background: linear-gradient(135deg, #dff2fe, #c5e4f8);
+  border: 1px solid rgba(12, 127, 199, 0.3);
+  color: #086aa5;
+  box-shadow: 0 2px 8px rgba(12, 127, 199, 0.1);
+}
+
+.pill:hover {
+  @apply shadow-md;
+  background: linear-gradient(135deg, #c5e4f8, #afd6f3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(12, 127, 199, 0.2);
+}
+
+/* ============================================
+   UTILITY ANIMATIONS
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 4px rgba(12, 127, 199, 0.15),
+      0 0 20px rgba(12, 127, 199, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 6px rgba(12, 127, 199, 0.2),
+      0 0 35px rgba(12, 127, 199, 0.35);
+  }
+}
+
+/* Stagger animation delays for multiple elements */
+.animate-stagger-0 { animation-delay: 0s; }
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(12, 127, 199, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(12, 127, 199, 0.3);
+  }
+}

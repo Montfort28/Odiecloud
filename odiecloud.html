@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODIECLOUD²π | Governance-Engineered Ecosystem for Growth, Trade, Capital, and Market Access</title>
+  <meta name="description" content="ODIECLOUD²π is a governance-first ecosystem that structures businesses, partnerships, trade, manufacturing, technology, and market access through disciplined systems, membership communities, and profit-centre solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5fbff;
+      --surface: #ffffff;
+      --surface-2: #eef7fd;
+      --text: #0f172a;
+      --muted: #587089;
+      --line: #d8e8f4;
+      --blue-700: #0c7fc7;
+      --blue-800: #086aa5;
+      --blue-900: #044f7d;
+      --blue-soft: #dff2fe;
+      --teal: #14b8a6;
+      --navy: #0b2239;
+      --shadow: 0 18px 48px rgba(10, 54, 88, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(12, 127, 199, 0.08), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.08), transparent 22%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--blue-900), var(--blue-700));
+      color: #fff;
+      font-size: 13px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 42px;
+    }
+
+    .topbar-badge {
+      flex: 0 0 auto;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .ticker {
+      position: relative;
+      height: 24px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .ticker-item {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: .45s ease;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .ticker-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 251, 255, 0.85);
+      border-bottom: 1px solid rgba(216, 232, 244, 0.9);
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-700), #53b9f8);
+      box-shadow: inset 0 0 22px rgba(255,255,255,.16), 0 10px 24px rgba(12,127,199,.24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .brand-mark::before {
+      width: 20px;
+      height: 20px;
+      top: 6px;
+      left: 8px;
+    }
+
+    .brand-mark::after {
+      width: 34px;
+      height: 34px;
+      right: -6px;
+      bottom: -8px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+
+    .brand-copy span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: #28435f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      background: rgba(12, 127, 199, 0.08);
+      color: var(--blue-800);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--blue-800), var(--blue-700));
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(12,127,199,.18);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--blue-800);
+      border-color: var(--line);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--line);
+      color: #28435f;
+    }
+
+    .hero {
+      padding: 42px 0 28px;
+    }
+
+    .hero-card {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.38), transparent 16%),
+        radial-gradient(circle at 18% 78%, rgba(255,255,255,.18), transparent 14%),
+        linear-gradient(135deg, rgba(4,79,125,.98), rgba(12,127,199,.96), rgba(83,185,248,.88));
+      border-radius: 36px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.24);
+      box-shadow: 0 28px 80px rgba(10, 54, 88, 0.14);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: center;
+      padding: 64px 52px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: #fff;
+      margin: 0 0 16px;
+      font-size: clamp(2.6rem, 6vw, 5.15rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 900;
+      max-width: 760px;
+    }
+
+    .hero p.lead {
+      margin: 0 0 24px;
+      color: rgba(255,255,255,.92);
+      font-size: clamp(1.02rem, 1.45vw, 1.26rem);
+      max-width: 760px;
+      line-height: 1.75;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 22px;
+      padding: 18px 16px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-weight: 900;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+      position: relative;
+    }
+
+    .ecosystem-orb {
+      width: min(100%, 460px);
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 68% 30%, rgba(255,255,255,.72), transparent 18%),
+        linear-gradient(135deg, rgba(255,255,255,.34), rgba(255,255,255,.08));
+      position: relative;
+      box-shadow:
+        inset 0 0 80px rgba(255,255,255,.16),
+        0 30px 80px rgba(0,55,92,.25);
+      border: 1px solid rgba(255,255,255,.26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ecosystem-ring {
+      width: 72%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: 22px solid rgba(255,255,255,.28);
+      border-top-color: rgba(255,255,255,.85);
+      border-right-color: rgba(255,255,255,.55);
+      transform: rotate(34deg);
+      position: relative;
+    }
+
+    .ecosystem-ring::before,
+    .ecosystem-ring::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,255,255,.24));
+      box-shadow: 0 16px 30px rgba(0, 80, 130, 0.18);
+    }
+
+    .ecosystem-ring::before {
+      width: 58px;
+      height: 58px;
+      right: -26px;
+      top: 26%;
+    }
+
+    .ecosystem-ring::after {
+      width: 42px;
+      height: 42px;
+      left: 8%;
+      top: -40px;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3vw, 3.25rem);
+      line-height: 1.04;
+      letter-spacing: -.04em;
+      font-weight: 900;
+      color: #0c1f32;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-body { padding: 24px; }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: #10243d;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      border: 1px solid #cce6f7;
+      color: var(--blue-800);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .q-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .q-card {
+      background: linear-gradient(180deg, #fff, #f8fcff);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .q-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    .answer { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+    .solution-stack {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .problem-list { display: grid; gap: 14px; }
+
+    .problem-item {
+      padding: 18px 18px 18px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .problem-index {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--blue-700), #53b9f8);
+      color: #fff;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .profit-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, #ffffff, #f4fbff);
+    }
+
+    .profit-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .journey-step {
+      position: relative;
+      background: linear-gradient(180deg, #ffffff, #f8fcff);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .journey-step strong {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue-700), #53b9f8);
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+
+    .communities-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .community {
+      background: linear-gradient(180deg, #fff, #f5fbff);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      min-height: 220px;
+    }
+
+    .community h3 {
+      font-size: 1rem;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .opportunity-band {
+      background: linear-gradient(135deg, #0a3558, #0c7fc7);
+      border-radius: 34px;
+      color: #fff;
+      box-shadow: 0 24px 60px rgba(7, 68, 109, .18);
+      overflow: hidden;
+    }
+
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .opportunity {
+      padding: 28px 24px;
+      border-right: 1px solid rgba(255,255,255,.12);
+      min-height: 100%;
+    }
+
+    .opportunity:last-child { border-right: 0; }
+    .opportunity p { color: rgba(255,255,255,.88); }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .form-panel,
+    .info-panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #28435f;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 50px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 0 14px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+    }
+
+    textarea {
+      min-height: 140px;
+      padding: 14px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue-700);
+      box-shadow: 0 0 0 4px rgba(12,127,199,.1);
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 42px;
+      padding: 48px 0 18px;
+      background: linear-gradient(180deg, #0d2438, #081827);
+      color: #ebf4fb;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      gap: 22px;
+    }
+
+    .footer h4 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .footer p, .footer a, .footer li {
+      color: rgba(235,244,251,.78);
+      font-size: .95rem;
+    }
+
+    .footer a { display: block; margin: 8px 0; }
+
+    .footer-bottom {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .center { text-align: center; }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .solution-stack,
+      .form-wrap,
+      .footer-grid { grid-template-columns: 1fr; }
+      .communities-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .journey,
+      .opportunity-grid,
+      .cards-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .nav-row { flex-wrap: wrap; padding: 10px 0; }
+    }
+
+    @media (max-width: 860px) {
+      .cards-3,
+      .cards-2,
+      .journey,
+      .opportunity-grid,
+      .hero-metrics,
+      .communities-grid,
+      .form-grid { grid-template-columns: 1fr; }
+      .hero-grid { padding: 40px 22px; }
+      .hero-visual { min-height: 280px; }
+      .nav-links { justify-content: flex-start; }
+      .nav-actions { justify-content: flex-start; width: 100%; }
+      .topbar-inner { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-badge">ODIECLOUD²π Access Signals</div>
+      <div class="ticker" id="ticker">
+        <div class="ticker-item active">Membership enables structured entry into governance, market access, partnerships, capital-ready systems, and ecosystem solutions.</div>
+        <div class="ticker-item">Business Opportunities: activate growth through ODIEBOARD, Channel Partners, and ecosystem distribution architecture.</div>
+        <div class="ticker-item">Trade Opportunities: enter ODIEXA-aligned trade pathways with disciplined structure, partner access, and cross-border logic.</div>
+        <div class="ticker-item">Manufacturing Opportunities: connect sourcing, production, market access, and governance-backed execution.</div>
+        <div class="ticker-item">Investment Opportunities: request access for ecosystem briefings, structured participation pathways, and vetted engagement channels.</div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav-row">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-copy">
+          <strong>ODIECLOUD²π</strong>
+          <span>Governance-Engineered Ecosystem Access</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#questions">Questions We Answer</a>
+        <a href="#profit-centres">Profit Centres</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#communities">Communities</a>
+        <a href="#access">Request Access</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#communities">Membership Types</a>
+        <a class="btn btn-secondary" href="#profit-centres">Explore Solutions</a>
+        <a class="btn btn-primary" href="#access">Request Membership Access</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Member of ODIECLOUD²π Ecosystem</div>
+              <h1>Join the ecosystem built to structure growth, trade, capital, technology, and market access.</h1>
+              <p class="lead">
+                ODIECLOUD²π gives founders, operators, partners, investors, manufacturers, technologists, and institutions a governed pathway into business growth, cross-border execution, partnership frameworks, digital infrastructure, and coordinated opportunity.
+              </p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a class="btn btn-primary" href="#access">Request Membership Access</a>
+                <a class="btn btn-secondary" href="#questions">See the Questions We Answer</a>
+              </div>
+              <div class="hero-metrics">
+                <div class="metric"><strong>7</strong><span>Membership Community Types</span></div>
+                <div class="metric"><strong>8+</strong><span>Core Profit-Centre Solution Areas</span></div>
+                <div class="metric"><strong>4</strong><span>Opportunity Corridors</span></div>
+                <div class="metric"><strong>1</strong><span>Unified Ecosystem Access Form</span></div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="ecosystem-orb">
+                <div class="ecosystem-ring"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why this website exists</h2>
+          <p>
+            The public-facing ODIECLOUD²π website must do more than describe a brand. It must clearly show how the ecosystem solves real business problems, how membership opens structured pathways, and why serious participants should request access instead of remaining outside the system.
+          </p>
+        </div>
+        <div class="cards cards-3">
+          <div class="card"><div class="card-body"><h3>Clarify the ecosystem</h3><p>Translate ODIECLOUD²π into practical public-facing benefits: structure, trust, execution, market access, and governed growth.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Convert interest into membership</h3><p>Every serious prospect is directed into a controlled access request form instead of passive browsing with no next step.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Present opportunity responsibly</h3><p>Show business, investment, manufacturing, and trade pathways inside a disciplined ecosystem entry framework.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="questions">
+      <div class="container">
+        <div class="section-head">
+          <h2>Questions the ecosystem is built to answer</h2>
+          <p>
+            ODIECLOUD²π should be presented as the answer to questions businesses, investors, partners, manufacturers, and institutions are already asking.
+          </p>
+        </div>
+
+        <div class="q-grid">
+          <div class="q-card">
+            <h3>How do we structure a business so it can scale across jurisdictions without breaking internally?</h3>
+            <div class="answer">
+              <p><strong>Answer:</strong> Through ODIEBOARD and the ecosystem governance layer, ODIECLOUD²π establishes lines of communication, accountability, systems architecture, compliance logic, and scalable execution discipline.</p>
+            </div>
+          </div>
+
+          <div class="q-card">
+            <h3>How do we access markets, partnerships, and distribution without relying on informal networks?</h3>
+            <div class="answer">
+              <p><strong>Answer:</strong> Through the Channel Partner Network, strategic partnerships, and ecosystem community structure, ODIECLOUD²π turns relationship-building into a measurable and governed pathway.</p>
+            </div>
+          </div>
+
+          <div class="q-card">
+            <h3>How do we connect technology, operations, and commercial growth inside one framework?</h3>
+            <div class="answer">
+              <p><strong>Answer:</strong> Through the Federated Core, Oπ, Tech Hub partnerships, and the broader ecosystem architecture, ODIECLOUD²π aligns digital infrastructure with execution and growth.</p>
+            </div>
+          </div>
+
+          <div class="q-card">
+            <h3>How do we identify serious business, trade, manufacturing, and investment opportunities without chaos?</h3>
+            <div class="answer">
+              <p><strong>Answer:</strong> Through governed membership access, curated communities, and profit-centre pathways that separate qualified participation from casual interest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profit-centres">
+      <div class="container">
+        <div class="section-head">
+          <h2>Profit centres positioned as solutions</h2>
+          <p>
+            Each profit centre must be presented to the public not as internal jargon, but as a solution to an identifiable business or market problem.
+          </p>
+        </div>
+
+        <div class="cards cards-2">
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Governance</span><span class="pill">Structure</span></div>
+              <h3>ODIEBOARD</h3>
+              <p><strong>Problem solved:</strong> Businesses fail to scale because communication, governance, accountability, and structure are fragmented.</p>
+              <ul>
+                <li>Defines organizational architecture</li>
+                <li>Establishes lines of communication</li>
+                <li>Creates governance discipline for scale</li>
+                <li>Supports subsidiaries, affiliates, and partners</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Infrastructure</span><span class="pill">Systems</span></div>
+              <h3>Federated Core</h3>
+              <p><strong>Problem solved:</strong> Many organizations lack sovereign-grade digital infrastructure to coordinate operations, communication, and data control.</p>
+              <ul>
+                <li>Provides cloud and collaboration backbone</li>
+                <li>Supports operational systems and workflow discipline</li>
+                <li>Strengthens data and platform sovereignty</li>
+                <li>Creates infrastructure readiness for growth</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Trade</span><span class="pill">Commerce</span></div>
+              <h3>ODIEXA</h3>
+              <p><strong>Problem solved:</strong> Trade relationships are often unstructured, fragmented, and disconnected from governed execution.</p>
+              <ul>
+                <li>Frames ecosystem trade pathways</li>
+                <li>Supports structured commercial exchange</li>
+                <li>Improves visibility around trade participation</li>
+                <li>Strengthens public-facing trade opportunity positioning</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Technology</span><span class="pill">Innovation</span></div>
+              <h3>Oπ / Tech Hub</h3>
+              <p><strong>Problem solved:</strong> Businesses and ecosystems struggle to connect product building, development capacity, and digital execution.</p>
+              <ul>
+                <li>Supports technology development communities</li>
+                <li>Creates partnership paths for builders and innovators</li>
+                <li>Aligns technology with ecosystem growth needs</li>
+                <li>Connects membership to practical build capacity</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Distribution</span><span class="pill">Growth</span></div>
+              <h3>Channel Partner Network</h3>
+              <p><strong>Problem solved:</strong> Businesses need scalable sales and relationship channels but often rely on informal, unmanaged networks.</p>
+              <ul>
+                <li>Repositions affiliate/advisor logic into a stronger partner model</li>
+                <li>Supports ecosystem-wide distribution and introductions</li>
+                <li>Creates a governed route for market expansion</li>
+                <li>Strengthens growth with visibility and standards</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Recognition</span><span class="pill">Participation</span></div>
+              <h3>Aureon9</h3>
+              <p><strong>Problem solved:</strong> Many ecosystems fail to retain participation because contribution is not structured or recognized.</p>
+              <ul>
+                <li>Creates tiered achievement and participation logic</li>
+                <li>Supports public-facing advancement pathways</li>
+                <li>Aligns contribution with community progression</li>
+                <li>Improves long-term member engagement</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Capital</span><span class="pill">Integrity</span></div>
+              <h3>Capital Command</h3>
+              <p><strong>Problem solved:</strong> Growth without financial discipline creates instability, leakage, and weak institutional confidence.</p>
+              <ul>
+                <li>Signals monetary and reserve discipline</li>
+                <li>Supports ecosystem credibility with serious participants</li>
+                <li>Frames public confidence around structured scale</li>
+                <li>Strengthens investment-readiness narratives</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card profit-card">
+            <div class="card-body">
+              <div class="tags"><span class="pill">Tourism</span><span class="pill">Gateway</span></div>
+              <h3>Experience-Led Market Entry</h3>
+              <p><strong>Problem solved:</strong> Many opportunities stay abstract because people never enter the ecosystem through practical, experiential pathways.</p>
+              <ul>
+                <li>Supports ecosystem discovery through travel and business exposure</li>
+                <li>Opens conversations around trade and investment</li>
+                <li>Builds trust through curated engagement experiences</li>
+                <li>Creates a softer entry path into ecosystem participation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>How the public should understand the ecosystem</h2>
+          <p>
+            ODIECLOUD²π should be explained as an access architecture: people join through membership, enter the right community, connect to the right profit-centre solutions, and move into the right opportunity corridors.
+          </p>
+        </div>
+
+        <div class="journey">
+          <div class="journey-step">
+            <strong>1</strong>
+            <h3>Request access</h3>
+            <p>Every serious participant completes the membership access form, creating a controlled first point of entry.</p>
+          </div>
+          <div class="journey-step">
+            <strong>2</strong>
+            <h3>Qualified routing</h3>
+            <p>Applicants are aligned to the right community type and solution pathway based on profile, intent, and opportunity class.</p>
+          </div>
+          <div class="journey-step">
+            <strong>3</strong>
+            <h3>Solution alignment</h3>
+            <p>The ecosystem connects each member to the right governance, technology, trade, partner, or manufacturing framework.</p>
+          </div>
+          <div class="journey-step">
+            <strong>4</strong>
+            <h3>Coordinated participation</h3>
+            <p>Membership becomes active through structured engagement, opportunity participation, and ecosystem contribution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="opportunities">
+      <div class="container">
+        <div class="section-head">
+          <h2>Opportunity corridors the site must promote</h2>
+          <p>
+            These pathways should be visible, attractive, and disciplined. The message is not random access. It is structured participation through ecosystem membership.
+          </p>
+        </div>
+
+        <div class="opportunity-band">
+          <div class="opportunity-grid">
+            <div class="opportunity">
+              <h3>Business Opportunities</h3>
+              <p>For founders, operators, and organizations seeking systems, structure, partner access, market growth, and ecosystem integration.</p>
+            </div>
+            <div class="opportunity">
+              <h3>Investment Opportunities</h3>
+              <p>For qualified participants seeking briefings, structured entry points, governance-backed contexts, and ecosystem-aligned visibility.</p>
+            </div>
+            <div class="opportunity">
+              <h3>Manufacturing Opportunities</h3>
+              <p>For producers, industrial operators, sourcing networks, and builders seeking routes into coordinated production and market access.</p>
+            </div>
+            <div class="opportunity">
+              <h3>Trade Opportunities</h3>
+              <p>For entities looking to move goods, relationships, and commercial pathways through more disciplined cross-border structure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="communities">
+      <div class="container">
+        <div class="section-head">
+          <h2>Membership and community types</h2>
+          <p>
+            The website must clearly present ODIECLOUD²π not as one generic membership, but as a set of relationship and participation classes inside the ecosystem.
+          </p>
+        </div>
+
+        <div class="communities-grid">
+          <div class="community"><h3>Subsidiaries</h3><p>Wholly or majority controlled ecosystem operating entities aligned to ODIEBOARD and ecosystem standards.</p></div>
+          <div class="community"><h3>Equity Affiliates</h3><p>Aligned businesses with equity relationship and ecosystem integration logic.</p></div>
+          <div class="community"><h3>Equity Partners</h3><p>Partnerships structured around shared participation, strategic growth, and coordinated value creation.</p></div>
+          <div class="community"><h3>Strategic Partnerships</h3><p>External institutions, firms, and entities connected to the ecosystem for defined strategic collaboration.</p></div>
+          <div class="community"><h3>Technology Partnerships (Tech Hub)</h3><p>Builders, developers, and technology organizations connected through Oπ and the broader innovation framework.</p></div>
+          <div class="community"><h3>Channel Partner Network</h3><p>The renamed affiliate/advisor network built around distribution, introductions, and ecosystem commercial activation.</p></div>
+          <div class="community"><h3>Internship Networks</h3><p>Structured entry pathways for students, trainees, and emerging talent aligned to the ecosystem pipeline.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Suggested sitemap blueprint</h2>
+          <p>
+            This public site should be built as a high-clarity conversion and qualification website, not just an informational brochure.
+          </p>
+        </div>
+
+        <div class="cards cards-3">
+          <div class="card"><div class="card-body"><h3>Home</h3><p>Hero, ecosystem overview, key questions answered, profit-centre summary, opportunity corridors, and access CTA.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Ecosystem</h3><p>Explains ODIECLOUD²π architecture, governance-first philosophy, operating model, and public-facing logic.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Solutions</h3><p>Dedicated pages for each profit centre, framed as solutions to practical market and organizational problems.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Opportunities</h3><p>Business, investment, manufacturing, and trade opportunity pages with controlled positioning and access CTA.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Membership</h3><p>Explains community types, participation benefits, who should apply, and what happens after submission.</p></div></div>
+          <div class="card"><div class="card-body"><h3>Request Access</h3><p>The primary conversion page, containing the ecosystem access form and qualification logic.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="access">
+      <div class="container">
+        <div class="section-head">
+          <h2>Request membership access</h2>
+          <p>
+            Every founder, business, investor, institution, technologist, channel partner, manufacturer, or intern seeking entry into the ecosystem should complete this form.
+          </p>
+        </div>
+
+        <div class="form-wrap">
+          <div class="info-panel">
+            <h3 style="margin-top:0;font-size:1.5rem;">What happens after submission</h3>
+            <ul>
+              <li>Your request is reviewed against the ecosystem participation model.</li>
+              <li>You are aligned to the most appropriate community type and opportunity pathway.</li>
+              <li>Serious applicants can be invited into membership, briefing, or next-step conversations.</li>
+              <li>Public interest is converted into a structured ecosystem onboarding pathway.</li>
+            </ul>
+
+            <h3 style="margin-top:26px;font-size:1.2rem;">Benefits of becoming a member</h3>
+            <ul>
+              <li>Structured access to ecosystem solutions</li>
+              <li>Visibility into relevant opportunity corridors</li>
+              <li>Potential alignment with partnerships and market pathways</li>
+              <li>Governance-backed participation context</li>
+              <li>Entry into a defined ecosystem, not an informal network</li>
+            </ul>
+          </div>
+
+          <div class="form-panel">
+            <form>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input id="name" type="text" placeholder="Your full name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" type="email" placeholder="name@example.com" />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone / WhatsApp</label>
+                  <input id="phone" type="text" placeholder="+250 ..." />
+                </div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input id="country" type="text" placeholder="Country of operation" />
+                </div>
+                <div class="field">
+                  <label for="org">Organization / Business</label>
+                  <input id="org" type="text" placeholder="Company, institution, or initiative name" />
+                </div>
+                <div class="field">
+                  <label for="role">Your Role</label>
+                  <input id="role" type="text" placeholder="Founder, investor, operator, partner, etc." />
+                </div>
+                <div class="field">
+                  <label for="community">Membership / Community Type of Interest</label>
+                  <select id="community">
+                    <option>Select one</option>
+                    <option>Subsidiaries</option>
+                    <option>Equity Affiliates</option>
+                    <option>Equity Partners</option>
+                    <option>Strategic Partnerships</option>
+                    <option>Technology Partnerships (Tech Hub)</option>
+                    <option>Channel Partner Network</option>
+                    <option>Internship Networks</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="opportunity">Primary Opportunity Interest</label>
+                  <select id="opportunity">
+                    <option>Select one</option>
+                    <option>Business Opportunities</option>
+                    <option>Investment Opportunities</option>
+                    <option>Manufacturing Opportunities</option>
+                    <option>Trade Opportunities</option>
+                    <option>Technology / Build Opportunities</option>
+                    <option>General Ecosystem Membership</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="problem">What problem are you trying to solve?</label>
+                  <textarea id="problem" placeholder="Describe the business, market, governance, trade, investment, manufacturing, or technology problem you want ODIECLOUD²π to help solve."></textarea>
+                </div>
+                <div class="field full">
+                  <label for="notes">Why do you want access to ODIECLOUD²π?</label>
+                  <textarea id="notes" placeholder="Explain your intent, opportunity area, and why your participation should be considered."></textarea>
+                </div>
+              </div>
+              <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                <button class="btn btn-primary" type="submit">Request Membership Access</button>
+                <span class="disclaimer">Submission routes the applicant into a controlled ecosystem qualification process.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>ODIECLOUD²π</h4>
+        <p>Governance-engineered ecosystem access for growth, partnerships, technology, trade, capital, and coordinated participation.</p>
+        <p><strong>Member of ODIECLOUD²π Ecosystem.</strong></p>
+        <p>ODIECLOUD²π is a Registered Trademark and Service Mark of Oderson Holdings Ltd.</p>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="#overview">Overview</a>
+        <a href="#questions">Questions We Answer</a>
+        <a href="#profit-centres">Profit Centres</a>
+        <a href="#opportunities">Opportunities</a>
+      </div>
+      <div>
+        <h4>Communities</h4>
+        <a href="#communities">Subsidiaries</a>
+        <a href="#communities">Equity Affiliates</a>
+        <a href="#communities">Equity Partners</a>
+        <a href="#communities">Strategic Partnerships</a>
+      </div>
+      <div>
+        <h4>Networks</h4>
+        <a href="#communities">Technology Partnerships (Tech Hub)</a>
+        <a href="#communities">Channel Partner Network</a>
+        <a href="#communities">Internship Networks</a>
+        <a href="#access">Request Access</a>
+      </div>
+      <div>
+        <h4>Action</h4>
+        <a href="#access">Become a Member</a>
+        <a href="#opportunities">Explore Opportunities</a>
+        <a href="#profit-centres">View Solutions</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div><strong>Powered by ODIEBOARD</strong></div>
+      <div>© 2026 Oderson Holdings Ltd. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function rotateTicker() {
+      const items = document.querySelectorAll('.ticker-item');
+      if (!items.length) return;
+      let index = 0;
+      setInterval(() => {
+        items[index].classList.remove('active');
+        index = (index + 1) % items.length;
+        items[index].classList.add('active');
+      }, 4200);
+    })();
+  </script>
+</body>
+</html>
