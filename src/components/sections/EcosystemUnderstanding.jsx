@@ -23,7 +23,7 @@ const EcosystemUnderstanding = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2">
+    <section className="py-8.5 px-2 bg-blue-50">
       <div className="container">
         <div className="max-w-2xl mx-auto mb-7 text-center animate-slide-up">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]">
@@ -42,8 +42,8 @@ const EcosystemUnderstanding = () => {
               style={{animation: `slideUp 0.6s ease-out ${index * 0.1}s both`}}
             >
               {/* Animated Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-700/5 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-white via-blue-50/30 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-blue-700/5 to-transparent"></div>
               
               {/* Border with glow effect */}
               <div className="absolute inset-0 border-1.5 border-transparent group-hover:border-blue-700/20 rounded-3xl transition-all duration-500 pointer-events-none"></div>
@@ -53,7 +53,7 @@ const EcosystemUnderstanding = () => {
               
               {/* Content */}
               <div className="relative z-10">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-cyan-400 text-white font-black text-lg mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-700/30">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-br from-blue-700 to-cyan-400 text-white font-black text-lg mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-700/30">
                   {step.number}
                 </div>
                 <h3 className="text-lg font-black uppercase tracking-wider mb-3 text-text group-hover:text-blue-800 transition-colors duration-300">

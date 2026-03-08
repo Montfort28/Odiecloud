@@ -14,15 +14,15 @@ const Header = () => {
   ]
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b-2 border-sky-100/60 shadow-lg">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b-2 border-sky-100/40 shadow-lg">
       <div className="container">
         {/* Desktop Layout */}
         <div className="hidden lg:block py-4">
           {/* Top Row: Brand Left + 3 Buttons Right */}
           <div className="flex items-center justify-between gap-6 mb-3">
             {/* Left: Brand */}
-            <div className="flex items-center gap-3.5 flex-shrink-0">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden flex-shrink-0">
+            <div className="flex items-center gap-3.5 shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden shrink-0">
                 <div className="absolute w-5 h-5 rounded-full bg-white/25 top-2 left-2.5 animate-pulse"></div>
                 <div className="absolute w-9 h-9 rounded-full bg-white/20 -right-1 -bottom-2"></div>
               </div>
@@ -33,7 +33,7 @@ const Header = () => {
             </div>
 
             {/* Right: 3 Buttons */}
-            <div className="flex gap-2.5 items-center flex-shrink-0">
+            <div className="flex gap-2.5 items-center shrink-0">
               <a 
                 href="#profit-centres" 
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200"
@@ -79,9 +79,9 @@ const Header = () => {
 
         {/* Mobile Layout */}
         <div className="lg:hidden">
-          <div className="flex items-center justify-between gap-4 min-h-[70px] py-3">
-            <div className="flex items-center gap-3 flex-shrink-0">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden">
+          <div className="flex items-center justify-between gap-4 min-h-17.5 py-3">
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="w-11 h-11 rounded-2xl bg-linear-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden">
                 <div className="absolute w-5 h-5 rounded-full bg-white/25 top-2 left-2 animate-pulse"></div>
                 <div className="absolute w-8 h-8 rounded-full bg-white/20 -right-1 -bottom-1"></div>
               </div>

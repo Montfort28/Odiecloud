@@ -30,7 +30,7 @@ const OpportunitiesSection = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-r from-[#0a3558] to-blue-700 rounded-4xl text-white shadow-2xl overflow-hidden">
+        <div className="bg-linear-to-r from-[#0a3558] to-blue-700 rounded-4xl text-white shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
             {opportunities.map((opp, index) => (
               <div

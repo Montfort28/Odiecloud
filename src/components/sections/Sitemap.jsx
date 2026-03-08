@@ -27,7 +27,7 @@ const SitemapSection = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2">
+    <section className="py-8.5 px-2  bg-white">
       <div className="container">
         <div className="max-w-2xl mx-auto mb-7 text-center">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]">

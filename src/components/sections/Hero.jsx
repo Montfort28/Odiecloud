@@ -2,8 +2,8 @@ const Hero = () => {
   return (
     <section className="py-10.5 md:py-16 px-2" id="overview">
       <div className="container">
-        <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-400 rounded-4xl overflow-hidden border border-white/15 shadow-2xl relative group hover:shadow-glow-lg transition-all duration-300">
-          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="bg-linear-to-br from-blue-900 via-blue-800 to-cyan-400 rounded-4xl overflow-hidden border border-white/15 shadow-2xl relative group hover:shadow-glow-lg transition-all duration-300">
+          <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-7 items-center p-8 md:p-16 relative z-10">
             {/* Left Content */}
             <div style={{animation: 'fadeIn 0.5s ease-out'}}>
@@ -43,7 +43,7 @@ const Hero = () => {
                     <div className="text-3xl leading-none mb-1.5 group-hover:drop-shadow-lg transition-all duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>
                       {stat.value}
                     </div>
-                    <div className="text-xs leading-snug group-hover:text-white/100 transition-colors duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>
+                    <div className="text-xs leading-snug group-hover:text-white transition-colors duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>
                       {stat.label}
                     </div>
                   </div>
@@ -53,10 +53,10 @@ const Hero = () => {
 
             {/* Right Visual */}
             <div className="flex justify-center items-center min-h-80 md:min-h-96 relative" style={{animation: 'float 3s ease-in-out infinite'}}>
-              <div className="w-full max-w-sm aspect-square rounded-full bg-gradient-to-br from-white/40 via-white/10 to-white/5 relative shadow-2xl border border-white/26 flex items-center justify-center group hover:shadow-glow-lg transition-all duration-300">
-                <div className="absolute inset-0 rounded-full border-[22px] border-white/28 border-t-white/85 border-r-white/55 rotate-[34deg] group-hover:rotate-[44deg] transition-transform duration-500">
-                  <div className="absolute w-14 h-14 rounded-full bg-gradient-to-br from-white/94 to-white/24 shadow-md -right-7 top-1/3 group-hover:shadow-glow transition-all duration-300 hover:scale-110"></div>
-                  <div className="absolute w-10 h-10 rounded-full bg-gradient-to-br from-white/94 to-white/24 shadow-md left-2 -top-5 group-hover:shadow-glow transition-all duration-300 hover:scale-110"></div>
+              <div className="w-full max-w-sm aspect-square rounded-full bg-linear-to-br from-white/40 via-white/10 to-white/5 relative shadow-2xl border border-white/26 flex items-center justify-center group hover:shadow-glow-lg transition-all duration-300">
+                <div className="absolute inset-0 rounded-full border-22 border-white/28 border-t-white/85 border-r-white/55 rotate-34 group-hover:rotate-44 transition-transform duration-500">
+                  <div className="absolute w-14 h-14 rounded-full bg-linear-to-br from-white/94 to-white/24 shadow-md -right-7 top-1/3 group-hover:shadow-glow transition-all duration-300 hover:scale-110"></div>
+                  <div className="absolute w-10 h-10 rounded-full bg-linear-to-br from-white/94 to-white/24 shadow-md left-2 -top-5 group-hover:shadow-glow transition-all duration-300 hover:scale-110"></div>
                 </div>
               </div>
             </div>

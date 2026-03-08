@@ -105,10 +105,9 @@ img {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-1px);
   box-shadow: 
-    0 12px 40px rgba(14, 165, 233, 0.4),
-    0 0 0 4px rgba(14, 165, 233, 0.1),
+    0 4px 15px rgba(14, 165, 233, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);
 }
@@ -314,7 +313,10 @@ img {
    ============================================ */
 
 .profit-card {
-  @apply overflow-hidden transition-all duration-500 rounded-3xl cursor-pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 1.5rem;
+  cursor: pointer;
   background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
   border: 2px solid rgba(14, 165, 233, 0.15);
   backdrop-filter: blur(20px);
@@ -324,67 +326,40 @@ img {
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
   animation: slideUp 0.6s ease-out;
   position: relative;
-  overflow: hidden;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
+  will-change: transform;
 }
 
 .profit-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(56, 189, 248, 0.12));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(56, 189, 248, 0.08));
   opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.profit-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
-  opacity: 0;
-  transition: all 0.6s;
-  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .profit-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-4px);
   box-shadow: 
-    0 30px 70px rgba(14, 165, 233, 0.2),
-    0 0 0 2px rgba(14, 165, 233, 0.3),
+    0 15px 40px rgba(14, 165, 233, 0.12),
     inset 0 2px 0 rgba(255, 255, 255, 1);
-  border-color: rgba(14, 165, 233, 0.3);
-  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240, 249, 255, 1) 100%);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
 .profit-card:hover::before {
   opacity: 1;
 }
 
-.profit-card:hover::after {
-  opacity: 1;
-  top: -30%;
-  right: -30%;
-  animation: rotateGlow 6s linear infinite;
-}
-
 .profit-icon-wrapper {
-  @apply flex items-center justify-center rounded-2xl transition-all duration-500;
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(56, 189, 248, 0.15));
-  border: 2px solid rgba(14, 165, 233, 0.2);
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
   flex-shrink: 0;
 }
 
 .profit-card:hover .profit-icon-wrapper {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(56, 189, 248, 0.25));
-  border-color: rgba(14, 165, 233, 0.4);
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.25);
   transform: scale(1.1) rotate(5deg);
 }
 
@@ -392,7 +367,7 @@ img {
   width: 28px;
   height: 28px;
   color: #0369a1;
-  transition: all 0.5s;
+  transition: all 0.3s ease;
 }
 
 .profit-card:hover .profit-icon {
@@ -401,17 +376,17 @@ img {
 }
 
 .profit-title {
-  @apply m-0 mb-2.5 tracking-tight;
+  margin: 0 0 0.625rem 0;
+  letter-spacing: -0.025em;
   font-family: "Fredoka", sans-serif;
   font-weight: 700;
   font-size: 1.35rem;
   color: #0f172a;
-  transition: all 0.3s;
+  transition: color 0.3s ease;
 }
 
 .profit-card:hover .profit-title {
   color: #0369a1;
-  transform: translateX(4px);
 }
 
 .profit-problem {
@@ -427,14 +402,13 @@ img {
   font-size: 0.92rem;
   font-weight: 500;
   line-height: 1.6;
-  transition: all 0.3s;
+  transition: color 0.3s ease;
   position: relative;
   padding-left: 4px;
 }
 
 .profit-card:hover .profit-item {
   color: #1e293b;
-  transform: translateX(3px);
 }
 
 /* Modern Question Card with smooth expand animation */
@@ -546,7 +520,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 label {
-  @apply text-xs transition-colors duration-200;
+  font-size: 0.9375rem;
+  transition: color 0.2s;
   font-family: "Fredoka", sans-serif;
   font-weight: 600;
   color: #0c4a6e;
@@ -716,4 +691,152 @@ label {
     opacity: 0.7;
     transform: scale(0.95);
   }
+}
+
+/* ============================================
+   ENHANCED CARD HOVER ANIMATIONS
+   ============================================ */
+
+@keyframes cardHoverGlow {
+  0% {
+    box-shadow: 
+      0 0 0 0 rgba(14, 165, 233, 0.4),
+      0 0 0 0 rgba(14, 165, 233, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 25px 60px rgba(14, 165, 233, 0.15),
+      0 0 0 10px rgba(14, 165, 233, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 25px 60px rgba(14, 165, 233, 0.15),
+      0 0 0 20px rgba(14, 165, 233, 0);
+  }
+}
+
+@keyframes cardScaleIn {
+  0% {
+    transform: translateY(-3px) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-12px) scale(1.01);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmerLight {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes borderPulse {
+  0% {
+    border-color: rgba(14, 165, 233, 0.2);
+  }
+  50% {
+    border-color: rgba(14, 165, 233, 0.8);
+  }
+  100% {
+    border-color: rgba(14, 165, 233, 0.2);
+  }
+}
+
+/* Enhanced hover states for community and access cards */
+.group:hover {
+  animation: cardHoverGlow 0.6s ease-out;
+}
+
+
+/* ============================================
+   COMMUNITY CARD STYLING WITH LARGER ICONS - UPDATED
+   ============================================ */
+
+.community-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border-color 0.4s ease-out;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(240, 249, 255, 0.95) 100%);
+  border: 2px solid rgba(14, 165, 233, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 40px rgba(14, 165, 233, 0.08),
+    0 0 0 1px rgba(14, 165, 233, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  padding: 28px;
+  min-height: 240px;
+}
+
+.community-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 50px rgba(14, 165, 233, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(14, 165, 233, 0.25);
+}
+
+.community-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  margin-bottom: 16px;
+}
+
+.community-card:hover .community-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.community-icon {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  transition: all 0.5s;
+}
+
+.community-card:hover .community-icon {
+  color: #000000;
+  transform: scale(1.1);
+}
+
+.community-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.125rem;
+  font-weight: 900;
+  line-height: 1.375;
+  letter-spacing: -0.025em;
+  transition: all 0.3s;
+  font-family: "Fredoka", sans-serif;
+  color: #0f172a;
+}
+
+.community-card:hover .community-title {
+  color: #0369a1;
+}
+
+.community-description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.625;
+  flex-grow: 1;
+  transition: color 0.3s;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 500;
+  color: #334155;
+}
+
+.community-card:hover .community-description {
+  color: #1e293b;
 }

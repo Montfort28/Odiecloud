@@ -24,10 +24,10 @@ const QuestionsSection = () => {
   ]
 
   return (
-    <section className="py-16 px-2" id="questions">
+    <section className="py-8.5 px-2 bg-blue-50/30" id="questions">
       <div className="container">
         <div className="max-w-3xl mx-auto mb-12 text-center" style={{animation: 'fadeIn 0.8s ease-out'}}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-sky-100 to-cyan-100 border border-sky-200 text-sky-700 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-sky-100 to-cyan-100 border border-sky-200 text-sky-700 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-sky-500" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
             Strategic Questions
           </div>
@@ -47,7 +47,7 @@ const QuestionsSection = () => {
               onClick={() => setExpandedIndex(expandedIndex === index ? -1 : index)}
               style={{
                 animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240, 249, 255, 0.9) 100%)',
+                background: 'linear-linear(135deg, rgba(255,255,255,0.95) 0%, rgba(240, 249, 255, 0.9) 100%)',
                 border: '2px solid transparent',
                 boxShadow: '0 10px 40px rgba(14, 165, 233, 0.08), 0 0 0 1px rgba(14, 165, 233, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(20px)',
@@ -55,17 +55,17 @@ const QuestionsSection = () => {
                 transform: expandedIndex === index ? 'translateY(-4px) scale(1.01)' : 'translateY(0) scale(1)'
               }}
             >
-              {/* Animated gradient overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(56, 189, 248, 0.08))'}}></div>
+              {/* Animated linear overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'linear-linear(135deg, rgba(14, 165, 233, 0.05), rgba(56, 189, 248, 0.08))'}}></div>
               
               {/* Radial glow effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.1), transparent 70%)'}}></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-linear(circle at 50% 0%, rgba(14, 165, 233, 0.1), transparent 70%)'}}></div>
 
               <div className="flex items-start justify-between gap-4 relative z-10">
                 <h3 className="m-0 text-lg md:text-xl font-semibold text-slate-800 transition-colors duration-300 group-hover:text-sky-700" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 600, flex: 1}}>
                   {item.q}
                 </h3>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-cyan-400 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:scale-110" style={{boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)'}}>
+                <div className="shrink-0 w-10 h-10 rounded-full bg-linear-to-br from-sky-400 to-cyan-400 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:scale-110" style={{boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)'}}>
                   <FiChevronDown
                     className={`w-5 h-5 text-white transition-transform duration-300 ${
                       expandedIndex === index ? 'rotate-180' : ''
@@ -77,7 +77,7 @@ const QuestionsSection = () => {
               {expandedIndex === index && (
                 <div className="mt-6 pt-6 border-t border-sky-200 relative z-10" style={{animation: 'slideUp 0.4s ease-out'}}>
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center shadow-md">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-linear-to-br from-emerald-400 to-teal-400 flex items-center justify-center shadow-md">
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
