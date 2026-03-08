@@ -7,16 +7,16 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-7 items-center p-8 md:p-16 relative z-10">
             {/* Left Content */}
             <div style={{animation: 'fadeIn 0.5s ease-out'}}>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-white/12 border border-white/22 text-white text-xs font-black uppercase tracking-wider mb-5 hover:bg-white/18 transition-colors duration-300 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-white/12 border border-white/22 text-white text-xs uppercase tracking-wider mb-5 hover:bg-white/18 transition-colors duration-300 backdrop-blur-sm" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 600}}>
                 <span className="w-2 h-2 rounded-full bg-white/80" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
                 Member of ODIECLOUD²π Ecosystem
               </div>
 
-              <h1 className="text-white m-0 mb-4 text-4xl md:text-5xl lg:text-6xl leading-[0.98] -tracking-wider font-black max-w-5xl hover:drop-shadow-lg transition-all duration-300">
+              <h1 className="text-white m-0 mb-4 text-4xl md:text-5xl lg:text-6xl leading-[0.98] font-semibold max-w-5xl hover:drop-shadow-lg transition-all duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700, letterSpacing: '-0.02em'}}>
                 Join the ecosystem built to structure growth, trade, capital, technology, and market access.
               </h1>
 
-              <p className="text-white/92 m-0 mb-6 text-lg md:text-xl leading-relaxed max-w-2xl">
+              <p className="text-white/92 m-0 mb-6 text-lg md:text-xl leading-relaxed max-w-2xl" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 400}}>
                 ODIECLOUD²π gives founders, operators, partners, investors, manufacturers, technologists, and institutions a governed pathway into business growth, cross-border execution, partnership frameworks, digital infrastructure, and coordinated opportunity.
               </p>
 
@@ -40,10 +40,10 @@ const Hero = () => {
                     key={idx}
                     className="bg-white/10 border border-white/18 rounded-3xl px-4 py-4.5 text-white backdrop-blur-sm hover:bg-white/15 hover:shadow-glow transition-all duration-300 group cursor-pointer"
                   >
-                    <div className="text-3xl font-black leading-none mb-1.5 group-hover:drop-shadow-lg transition-all duration-300">
+                    <div className="text-3xl leading-none mb-1.5 group-hover:drop-shadow-lg transition-all duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>
                       {stat.value}
                     </div>
-                    <div className="text-xs leading-snug group-hover:text-white/100 transition-colors duration-300">
+                    <div className="text-xs leading-snug group-hover:text-white/100 transition-colors duration-300" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>
                       {stat.label}
                     </div>
                   </div>
