@@ -17,7 +17,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('overview')
 
   useEffect(() => {
-    // Smooth scroll to sections
+    // Smooth scroll to sections with header offset
     const handleNavClick = (e) => {
       const href = e.currentTarget.getAttribute('href')
       if (href && href.startsWith('#')) {
@@ -26,7 +26,15 @@ function App() {
         setActiveSection(id)
         const element = document.getElementById(id)
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
+          // Get the sticky header height (approximately 100px for header + topbar)
+          const headerHeight = 120
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY
+          const offsetPosition = elementPosition - headerHeight
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
         }
       }
     }

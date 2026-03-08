@@ -24,14 +24,25 @@ const QuestionsSection = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-blue-50/30" id="questions">
-      <div className="container">
+    <section className="py-8.5 px-2 bg-slate-50 relative overflow-hidden" id="questions">
+      {/* Background Image - Behind Content */}
+      <div 
+        className="absolute inset-0 opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: `url('/images/questions.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+      
+      <div className="container relative z-10">
         <div className="max-w-3xl mx-auto mb-12 text-center" style={{animation: 'fadeIn 0.8s ease-out'}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-sky-100 to-cyan-100 border border-sky-200 text-sky-700 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-sky-500" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
             Strategic Questions
           </div>
-          <h2 className="m-0 mb-4 text-4xl md:text-5xl lg:text-6xl leading-tight font-bold text-slate-800" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>
+          <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>
             Questions the ecosystem is built to answer
           </h2>
           <p className="m-0 text-slate-600 text-lg md:text-xl leading-relaxed" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 400}}>
@@ -52,7 +63,7 @@ const QuestionsSection = () => {
                 boxShadow: '0 10px 40px rgba(14, 165, 233, 0.08), 0 0 0 1px rgba(14, 165, 233, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(20px)',
                 padding: '32px',
-                transform: expandedIndex === index ? 'translateY(-4px) scale(1.01)' : 'translateY(0) scale(1)'
+                transform: expandedIndex === index ? 'translateY(-4px)' : 'translateY(0)'
               }}
             >
               {/* Animated linear overlay */}

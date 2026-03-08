@@ -43,7 +43,7 @@ const AccessFormSection = () => {
   }
 
   return (
-    <section className="py-8.5 px-2" id="access">
+    <section className="py-8.5 px-2 bg-white" id="access">
       <div className="container">
         <div className="max-w-2xl mx-auto mb-7 text-center animate-slide-up">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-slate-900">
@@ -61,7 +61,7 @@ const AccessFormSection = () => {
           >
             {/* Solid background card styling */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-cyan-50 to-sky-100 transition-all duration-500"></div>
-            <div className="absolute inset-0 border-2 border-blue-200/60 rounded-4xl group-hover:border-blue-400/80 transition-all duration-500 pointer-events-none"></div>
+            <div className="absolute inset-0 border-2 border-blue-200/60 rounded-4xl group-hover:border-blue-100/80 transition-all duration-500 pointer-events-none"></div>
             
             {/* Animated linear overlay on hover */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-200/30 to-sky-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-4xl"></div>
@@ -96,7 +96,7 @@ const AccessFormSection = () => {
           >
             {/* Solid background card styling */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-cyan-50 to-sky-100 transition-all duration-500"></div>
-            <div className="absolute inset-0 border-2 border-blue-200/60 rounded-4xl group-hover:border-blue-400/80 transition-all duration-500 pointer-events-none"></div>
+            <div className="absolute inset-0 border-2 border-blue-200/60 rounded-4xl group-hover:border-blue-100/80 transition-all duration-500 pointer-events-none"></div>
             
             {/* Animated linear overlay on hover */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-200/30 to-sky-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-4xl"></div>
@@ -194,7 +194,7 @@ const AccessFormSection = () => {
                         value={formData.community}
                         onChange={handleChange}
                         required
-                        className="w-full min-h-[50px] rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
+                        className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                       >
                         <option>Select one</option>
                         <option>Subsidiaries</option>
@@ -214,7 +214,7 @@ const AccessFormSection = () => {
                         value={formData.opportunity}
                         onChange={handleChange}
                         required
-                        className="w-full min-h-[50px] rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
+                        className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                       >
                         <option>Select one</option>
                         <option>Business Opportunities</option>

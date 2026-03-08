@@ -12,26 +12,51 @@ const WhyWebsite = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4.5">
-          <div className="card">
-            <div className="card-body">
-              <h3>Clarify the ecosystem</h3>
-              <p>Translate ODIECLOUD²π into practical public-facing benefits: structure, trust, execution, market access, and governed growth.</p>
+          {[
+            {
+              title: "Clarify the ecosystem",
+              description: "Translate ODIECLOUD²π into practical public-facing benefits: structure, trust, execution, market access, and governed growth."
+            },
+            {
+              title: "Convert interest into membership",
+              description: "Every serious prospect is directed into a controlled access request form instead of passive browsing with no next step."
+            },
+            {
+              title: "Present opportunity responsibly",
+              description: "Show business, investment, manufacturing, and trade pathways inside a disciplined ecosystem entry framework."
+            }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className="relative overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl cursor-pointer group bg-linear-to-r from-[#0a3558] to-blue-700"
+              style={{
+                animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
+              }}
+            >
+              {/* Hover background overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                style={{
+                  background: 'linear-gradient(to right, #1a5fa5, #3b9eff)'
+                }}
+              ></div>
+              
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" 
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.5), transparent)'
+                }}
+              ></div>
+              
+              <div className="relative z-10 p-7">
+                <h3 className="m-0 mb-3 text-xl font-black text-white group-hover:text-sky-200 transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
+                  {item.description}
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div className="card">
-            <div className="card-body">
-              <h3>Convert interest into membership</h3>
-              <p>Every serious prospect is directed into a controlled access request form instead of passive browsing with no next step.</p>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-body">
-              <h3>Present opportunity responsibly</h3>
-              <p>Show business, investment, manufacturing, and trade pathways inside a disciplined ecosystem entry framework.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

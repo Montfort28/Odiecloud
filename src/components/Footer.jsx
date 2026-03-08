@@ -1,11 +1,18 @@
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#0d2438] to-[#081827] text-blue-100 mt-10.5 pt-12 pb-4.5">
+    <footer className="bg-linear-to-b from-[#0d2438] to-[#081827] text-blue-100 mt-10.5 pt-12 pb-4.5">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5.5 mb-6">
           {/* About Section */}
           <div>
-            <h4 className="m-0 mb-3 text-base font-black text-white">ODIECLOUD²π</h4>
+            <div className="flex items-center gap-2.5 mb-3">
+              <img 
+                src="/images/cloud 2.png" 
+                alt="ODIECLOUD²π Logo" 
+                className="w-12 h-auto object-contain"
+              />
+              <h4 className="m-0 text-base font-black text-white">ODIECLOUD²π</h4>
+            </div>
             <p className="text-blue-100/78 text-sm mb-2">
               Governance-engineered ecosystem access for growth, partnerships, technology, trade, capital, and coordinated participation.
             </p>

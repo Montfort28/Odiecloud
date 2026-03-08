@@ -22,13 +22,14 @@ const Header = () => {
           <div className="flex items-center justify-between gap-6 mb-3">
             {/* Left: Brand */}
             <div className="flex items-center gap-3.5 shrink-0">
-              <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden shrink-0">
-                <div className="absolute w-5 h-5 rounded-full bg-white/25 top-2 left-2.5 animate-pulse"></div>
-                <div className="absolute w-9 h-9 rounded-full bg-white/20 -right-1 -bottom-2"></div>
-              </div>
+              <img 
+                src="/images/cloud 2.png" 
+                alt="ODIECLOUD²π Logo" 
+                className="w-16 h-auto object-contain"
+              />
               <div>
                 <div className="font-bold text-xl leading-tight text-slate-800" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>ODIECLOUD²π</div>
-                <div className="text-xs text-slate-600 font-medium mt-0.5" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>Governance-Engineered Ecosystem Access</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5 max-w-xs" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>Governance-Engineered<br />Ecosystem Access</div>
               </div>
             </div>
 
@@ -81,10 +82,11 @@ const Header = () => {
         <div className="lg:hidden">
           <div className="flex items-center justify-between gap-4 min-h-17.5 py-3">
             <div className="flex items-center gap-3 shrink-0">
-              <div className="w-11 h-11 rounded-2xl bg-linear-to-br from-sky-500 via-blue-500 to-cyan-400 shadow-lg relative overflow-hidden">
-                <div className="absolute w-5 h-5 rounded-full bg-white/25 top-2 left-2 animate-pulse"></div>
-                <div className="absolute w-8 h-8 rounded-full bg-white/20 -right-1 -bottom-1"></div>
-              </div>
+              <img 
+                src="/images/cloud 2.png" 
+                alt="ODIECLOUD²π Logo" 
+                className="w-16 h-auto object-contain"
+              />
               <div>
                 <div className="font-bold text-lg leading-tight text-slate-800" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>ODIECLOUD²π</div>
                 <div className="text-xs text-slate-600 font-medium" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 500}}>Ecosystem Access</div>
