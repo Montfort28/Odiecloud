@@ -9,7 +9,7 @@ const Footer = () => {
               <img 
                 src="/images/cloud 2.png" 
                 alt="ODIECLOUD²π Logo" 
-                className="w-12 h-auto object-contain"
+                className="w-16 h-auto object-contain"
               />
               <h4 className="m-0 text-base font-black text-white">ODIECLOUD²π</h4>
             </div>
@@ -61,12 +61,19 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-white/10 pt-4.5 flex justify-between gap-4 flex-wrap">
-          <div className="text-blue-100/78 text-sm">
-            <strong>Powered by ODIEBOARD</strong>
-          </div>
-          <div className="text-blue-100/78 text-sm">
-            © 2026 Oderson Holdings Ltd. All rights reserved.
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex justify-between gap-4 flex-wrap text-blue-100/78 text-sm items-center">
+            <div>
+              <p className="text-blue-100/78 text-sm m-0 mb-2">
+                All Oderson Holdings subsidiaries are Members of the ODIECLOUD²π Ecosystem.
+              </p>
+              <p className="text-blue-100/78 text-sm m-0">
+                ODIECLOUD²π, ODIEBOARD, Oπ, ODIEXA, and AUREX are Registered Trademark and Service Marks of Oderson Holdings Ltd.
+              </p>
+            </div>
+            <div>
+              <strong className="text-white">Powered By ODIEBOARD</strong>
+            </div>
           </div>
         </div>
       </div>

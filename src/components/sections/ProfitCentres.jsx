@@ -6,7 +6,7 @@ const ProfitCentres = () => {
       tags: ["Governance", "Structure"],
       title: "ODIEBOARD",
       icon: HiBriefcase,
-      image: "test.png",
+      image: "test 7.png",
       problem: "Businesses fail to scale because communication, governance, accountability, and structure are fragmented.",
       items: [
         "Defines organizational architecture",
@@ -19,7 +19,7 @@ const ProfitCentres = () => {
       tags: ["Infrastructure", "Systems"],
       title: "Federated Core",
       icon: HiServer,
-      image: "test 11.png",
+      image: "test 8.png",
       problem: "Many organizations lack sovereign-grade digital infrastructure to coordinate operations, communication, and data control.",
       items: [
         "Provides cloud and collaboration backbone",

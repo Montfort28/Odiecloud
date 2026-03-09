@@ -42,10 +42,10 @@ const QuestionsSection = () => {
             <span className="w-2 h-2 rounded-full bg-sky-500" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
             Strategic Questions
           </div>
-          <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]" style={{fontFamily: '"Inter", sans-serif', fontWeight: 700}}>
+          <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-slate-900">
             Questions the ecosystem is built to answer
           </h2>
-          <p className="m-0 text-slate-600 text-lg md:text-xl leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
+          <p className="m-0 text-slate-700 text-base md:text-lg font-medium">
             ODIECLOUD²π should be presented as the answer to questions businesses, investors, partners, manufacturers, and institutions are already asking.
           </p>
         </div>

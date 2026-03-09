@@ -19,16 +19,13 @@ const Topbar = () => {
   }, [])
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white text-sm overflow-hidden border-b border-transparent hover:border-b-white/10 transition-colors duration-300">
-      <div className="container flex items-center gap-4 min-h-[42px]">
-        <div className="flex-shrink-0 font-black text-xs uppercase tracking-wider p-1.5 rounded-full bg-white/15 border border-white/20 backdrop-filter backdrop-blur-sm hover:bg-white/20 transition-all duration-300 shadow-md">
-          ODIECLOUD²π Access Signals
-        </div>
-        <div className="flex-1 relative h-6 overflow-hidden">
+    <div className="bg-gradient-to-r from-[#0d2438] to-[#081827] text-white text-sm overflow-hidden border-b border-transparent hover:border-b-white/10 transition-colors duration-300">
+      <div className="container flex items-center justify-center min-h-[42px]">
+        <div className="flex-1 relative h-6 overflow-hidden text-center">
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`absolute inset-0 flex items-center whitespace-nowrap font-semibold transition-all duration-700 ease-in-out ${
+              className={`absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap font-semibold transition-all duration-700 ease-in-out ${
                 index === activeIndex
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-full pointer-events-none'
