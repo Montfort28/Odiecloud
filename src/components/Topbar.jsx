@@ -16,11 +16,11 @@ const Topbar = () => {
       setActiveIndex((prev) => (prev + 1) % messages.length)
     }, 4200)
     return () => clearInterval(interval)
-  }, [])
+  }, [messages.length])
 
   return (
-    <div className="bg-gradient-to-r from-[#0d2438] to-[#081827] text-white text-sm overflow-hidden border-b border-transparent hover:border-b-white/10 transition-colors duration-300">
-      <div className="container flex items-center justify-center min-h-[42px]">
+    <div className="bg-linear-to-r from-[#0d2438] to-[#081827] text-white text-sm overflow-hidden border-b border-transparent hover:border-b-white/10 transition-colors duration-300">
+      <div className="container flex items-center justify-center min-h-10.5">
         <div className="flex-1 relative h-6 overflow-hidden text-center">
           {messages.map((msg, index) => (
             <div
