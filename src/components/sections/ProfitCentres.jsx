@@ -6,6 +6,7 @@ const ProfitCentres = () => {
       tags: ["Governance", "Structure"],
       title: "ODIEBOARD",
       icon: HiBriefcase,
+      image: "test.png",
       problem: "Businesses fail to scale because communication, governance, accountability, and structure are fragmented.",
       items: [
         "Defines organizational architecture",
@@ -18,6 +19,7 @@ const ProfitCentres = () => {
       tags: ["Infrastructure", "Systems"],
       title: "Federated Core",
       icon: HiServer,
+      image: "test 11.png",
       problem: "Many organizations lack sovereign-grade digital infrastructure to coordinate operations, communication, and data control.",
       items: [
         "Provides cloud and collaboration backbone",
@@ -30,6 +32,7 @@ const ProfitCentres = () => {
       tags: ["Trade", "Commerce"],
       title: "ODIEXA",
       icon: HiShoppingCart,
+      image: "test 13.png",
       problem: "Trade relationships are often unstructured, fragmented, and disconnected from governed execution.",
       items: [
         "Frames ecosystem trade pathways",
@@ -42,6 +45,7 @@ const ProfitCentres = () => {
       tags: ["Technology", "Innovation"],
       title: "Oπ / Tech Hub",
       icon: HiLightningBolt,
+      image: "test 3.png",
       problem: "Businesses and ecosystems struggle to connect product building, development capacity, and digital execution.",
       items: [
         "Supports technology development communities",
@@ -54,6 +58,7 @@ const ProfitCentres = () => {
       tags: ["Distribution", "Growth"],
       title: "Channel Partner Network",
       icon: HiTrendingUp,
+      image: "test 4.png",
       problem: "Businesses need scalable sales and relationship channels but often rely on informal, unmanaged networks.",
       items: [
         "Repositions affiliate/advisor logic into a stronger partner model",
@@ -66,6 +71,7 @@ const ProfitCentres = () => {
       tags: ["Recognition", "Participation"],
       title: "Aureon9",
       icon: HiStar,
+      image: "test 14.png",
       problem: "Many ecosystems fail to retain participation because contribution is not structured or recognized.",
       items: [
         "Creates tiered achievement and participation logic",
@@ -78,6 +84,7 @@ const ProfitCentres = () => {
       tags: ["Capital", "Integrity"],
       title: "Capital Command",
       icon: HiCash,
+      image: "test 15.png",
       problem: "Growth without financial discipline creates instability, leakage, and weak institutional confidence.",
       items: [
         "Signals monetary and reserve discipline",
@@ -90,6 +97,7 @@ const ProfitCentres = () => {
       tags: ["Tourism", "Gateway"],
       title: "Experience-Led Market Entry",
       icon: HiGlobeAlt,
+      image: "test 10.png",
       problem: "Many opportunities stay abstract because people never enter the ecosystem through practical, experiential pathways.",
       items: [
         "Supports ecosystem discovery through travel and business exposure",
@@ -116,7 +124,16 @@ const ProfitCentres = () => {
           {profitCentres.map((centre, index) => {
             const Icon = centre.icon
             return (
-              <div key={index} className="profit-card h-full group">
+              <div 
+                key={index} 
+                className="profit-card h-full group"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(248, 250, 252, 0.75)), url(/images/${encodeURIComponent(centre.image)})`,
+                  backgroundSize: '50%',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
                 <div className="card-body flex flex-col h-full">
                   <div className="flex items-start justify-between mb-3.5">
                     <div className="flex gap-2 flex-wrap flex-1">

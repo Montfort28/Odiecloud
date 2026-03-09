@@ -42,10 +42,10 @@ const QuestionsSection = () => {
             <span className="w-2 h-2 rounded-full bg-sky-500" style={{animation: 'pulse 2s ease-in-out infinite'}}></span>
             Strategic Questions
           </div>
-          <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 700}}>
+          <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]" style={{fontFamily: '"Inter", sans-serif', fontWeight: 700}}>
             Questions the ecosystem is built to answer
           </h2>
-          <p className="m-0 text-slate-600 text-lg md:text-xl leading-relaxed" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 400}}>
+          <p className="m-0 text-slate-600 text-lg md:text-xl leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
             ODIECLOUD²π should be presented as the answer to questions businesses, investors, partners, manufacturers, and institutions are already asking.
           </p>
         </div>
@@ -73,7 +73,7 @@ const QuestionsSection = () => {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-linear(circle at 50% 0%, rgba(14, 165, 233, 0.1), transparent 70%)'}}></div>
 
               <div className="flex items-start justify-between gap-4 relative z-10">
-                <h3 className="m-0 text-lg md:text-xl font-semibold text-slate-800 transition-colors duration-300 group-hover:text-sky-700" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 600, flex: 1}}>
+                <h3 className="m-0 text-lg md:text-xl font-semibold text-slate-800 transition-colors duration-300 group-hover:text-sky-700" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600, flex: 1}}>
                   {item.q}
                 </h3>
                 <div className="shrink-0 w-10 h-10 rounded-full bg-linear-to-br from-sky-400 to-cyan-400 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:scale-110" style={{boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)'}}>
@@ -93,7 +93,7 @@ const QuestionsSection = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="m-0 text-slate-700 text-base md:text-lg leading-relaxed" style={{fontFamily: '"Fredoka", sans-serif', fontWeight: 400, flex: 1}}>
+                    <p className="m-0 text-slate-700 text-base md:text-lg leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400, flex: 1}}>
                       {item.a}
                     </p>
                   </div>

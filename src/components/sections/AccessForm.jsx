@@ -135,7 +135,7 @@ const AccessFormSection = () => {
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.2s'}}>
-                    <label htmlFor="phone" className="text-sm font-bold text-[#28435f]">Phone / WhatsApp</label>
+                    <label htmlFor="phone" className="text-sm font-bold text-[#28435f]">Phone/WhatsApp</label>
                     <input
                       id="phone"
                       type="text"
