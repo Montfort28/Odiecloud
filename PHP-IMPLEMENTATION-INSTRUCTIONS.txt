@@ -1,0 +1,48 @@
+ODIECLOUD²π ECOSYSTEM - PHP PROJECT IMPLEMENTATION INSTRUCTIONS
+================================================================
+
+CRITICAL REQUIREMENT:
+
+You are redesigning a PHP website that MUST follow the ODIECLOUD²π ecosystem design system.
+
+All design specifications, colors, components, typography, layouts, and styling rules are documented in the following files that are included in this project:
+
+1. DESIGN-SYSTEM-DOCUMENTATION.txt
+2. UNIVERSAL-TEMPLATE.html
+3. COMPLETE-WEBSITE-TEMPLATE.html
+
+YOUR TASK:
+
+1. Read and understand ALL specifications in DESIGN-SYSTEM-DOCUMENTATION.txt
+2. Study the structure in UNIVERSAL-TEMPLATE.html
+3. Review the complete implementation in COMPLETE-WEBSITE-TEMPLATE.html
+4. Implement EVERY specification EXACTLY as documented
+5. Use the EXACT colors, fonts, components, and layouts shown in the templates
+6. Ensure EVERY page includes the universal topbar, navbar, and footer
+7. Apply the universal background gradient to EVERY page
+8. Use ONLY the button styles (.btn-primary, .btn-secondary) defined in the documentation
+9. Use ONLY the card styles (.card, .card-dark) defined in the documentation
+10. Follow the grid system and responsive breakpoints exactly as specified
+
+DO NOT:
+- Deviate from any specification in the documentation
+- Create custom styles that conflict with the universal design system
+- Skip any universal components (topbar, navbar, footer)
+- Change colors, fonts, or layouts
+- Modify the footer trademark text
+
+VALIDATION:
+Every page you EDIT must pass the implementation checklist in DESIGN-SYSTEM-DOCUMENTATION.txt
+
+REMEMBER:
+This design system ensures all ODIECLOUD²π ecosystem websites appear as ONE UNIFIED PLATFORM. Consistency is mandatory.
+
+Refer to the documentation files for ALL implementation details.
+
+
+
+
+
+
+
+    ✗ DO NOT change any content or anyword or add anything thats not in the project(HIGHLY RECOMMENDED)

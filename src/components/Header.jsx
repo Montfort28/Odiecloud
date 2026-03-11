@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { HiMenu, HiX, HiGlobeAlt, HiMail } from 'react-icons/hi'
-import { HiLightBulb, HiShoppingBag, HiUsers, HiAcademicCap, HiInformationCircle } from 'react-icons/hi'
+import { HiLightBulb, HiShoppingBag, HiUsers, HiAcademicCap } from 'react-icons/hi'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navLinks = [
-    { href: '#overview', label: 'Solutions', icon: HiLightBulb },
-    { href: '#profit-centres', label: 'Marketplace', icon: HiShoppingBag },
-    { href: '#communities', label: 'Community', icon: HiUsers },
-    { href: '#questions', label: 'Resources', icon: HiAcademicCap },
-    { href: '#opportunities', label: 'About', icon: HiInformationCircle },
+    { href: '/', label: 'Ecosystem', icon: HiGlobeAlt },
+    { href: '/#overview', label: 'Solutions', icon: HiLightBulb },
+    { href: '/#profit-centres', label: 'Opportunities', icon: HiShoppingBag },
+    { href: '/#communities', label: 'Membership', icon: HiUsers },
+    { href: '/contact', label: 'Request Access', icon: HiAcademicCap },
   ]
 
   return (
@@ -20,11 +20,11 @@ const Header = () => {
         <div className="hidden lg:block py-3">
           <div className="flex items-center justify-between gap-6">
             {/* Left: Logo - Clickable */}
-            <a href="#overview" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
+            <a href="/" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
               <img 
                 src="/images/cloud 2.png" 
                 alt="ODIECLOUD²π Logo" 
-                className="w-14 h-auto object-contain"
+                className="w-18 h-auto object-contain"
               />
               <div>
                 <div className="font-bold text-lg leading-tight text-slate-800" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
@@ -53,7 +53,7 @@ const Header = () => {
             {/* Right: Join Ecosystem Button + Icons */}
             <div className="flex gap-3 items-center shrink-0">
               <a 
-                href="#access" 
+                href="/contact" 
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2"
                 style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
               >
@@ -66,7 +66,7 @@ const Header = () => {
                 <HiGlobeAlt className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
               </button>
               <a 
-                href="#access"
+                href="/contact"
                 className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
                 title="Contact Us"
               >
@@ -79,7 +79,7 @@ const Header = () => {
         {/* Mobile Layout */}
         <div className="lg:hidden">
           <div className="flex items-center justify-between gap-4 min-h-17.5 py-3">
-            <a href="#overview" className="flex items-center gap-2 shrink-0">
+            <a href="/" className="flex items-center gap-2 shrink-0">
               <img 
                 src="/images/cloud 2.png" 
                 alt="ODIECLOUD²π Logo" 
@@ -113,7 +113,7 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-sky-100/50">
-                  <a href="#access" className="btn btn-primary text-sm w-full" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}>
+                  <a href="/contact" className="btn btn-primary text-sm w-full" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}>
                     Join Ecosystem
                   </a>
                 </div>

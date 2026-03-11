@@ -6,7 +6,7 @@ const ProfitCentres = () => {
       tags: ["Governance", "Structure"],
       title: "ODIEBOARD",
       icon: HiBriefcase,
-      image: "test 7.png",
+      image: "image 1.jpg",
       problem: "Businesses fail to scale because communication, governance, accountability, and structure are fragmented.",
       items: [
         "Defines organizational architecture",
@@ -19,7 +19,7 @@ const ProfitCentres = () => {
       tags: ["Infrastructure", "Systems"],
       title: "Federated Core",
       icon: HiServer,
-      image: "test 8.png",
+      image: "image 12.jpg",
       problem: "Many organizations lack sovereign-grade digital infrastructure to coordinate operations, communication, and data control.",
       items: [
         "Provides cloud and collaboration backbone",
@@ -32,7 +32,7 @@ const ProfitCentres = () => {
       tags: ["Trade", "Commerce"],
       title: "ODIEXA",
       icon: HiShoppingCart,
-      image: "test 13.png",
+      image: "image 16.jpg",
       problem: "Trade relationships are often unstructured, fragmented, and disconnected from governed execution.",
       items: [
         "Frames ecosystem trade pathways",
@@ -45,7 +45,7 @@ const ProfitCentres = () => {
       tags: ["Technology", "Innovation"],
       title: "Oπ / Tech Hub",
       icon: HiLightningBolt,
-      image: "test 3.png",
+      image: "image 15.jpg",
       problem: "Businesses and ecosystems struggle to connect product building, development capacity, and digital execution.",
       items: [
         "Supports technology development communities",
@@ -58,7 +58,7 @@ const ProfitCentres = () => {
       tags: ["Distribution", "Growth"],
       title: "Channel Partner Network",
       icon: HiTrendingUp,
-      image: "test 4.png",
+      image: "image 14.jpg",
       problem: "Businesses need scalable sales and relationship channels but often rely on informal, unmanaged networks.",
       items: [
         "Repositions affiliate/advisor logic into a stronger partner model",
@@ -71,7 +71,7 @@ const ProfitCentres = () => {
       tags: ["Recognition", "Participation"],
       title: "Aureon9",
       icon: HiStar,
-      image: "test 14.png",
+      image: "image 6.jpg",
       problem: "Many ecosystems fail to retain participation because contribution is not structured or recognized.",
       items: [
         "Creates tiered achievement and participation logic",
@@ -84,7 +84,7 @@ const ProfitCentres = () => {
       tags: ["Capital", "Integrity"],
       title: "Capital Command",
       icon: HiCash,
-      image: "test 15.png",
+      image: "image 7.jpg",
       problem: "Growth without financial discipline creates instability, leakage, and weak institutional confidence.",
       items: [
         "Signals monetary and reserve discipline",
@@ -97,7 +97,7 @@ const ProfitCentres = () => {
       tags: ["Tourism", "Gateway"],
       title: "Experience-Led Market Entry",
       icon: HiGlobeAlt,
-      image: "test 10.png",
+      image: "image 8.jpg",
       problem: "Many opportunities stay abstract because people never enter the ecosystem through practical, experiential pathways.",
       items: [
         "Supports ecosystem discovery through travel and business exposure",
@@ -126,15 +126,19 @@ const ProfitCentres = () => {
             return (
               <div 
                 key={index} 
-                className="profit-card h-full group"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(248, 250, 252, 0.75)), url(/images/${encodeURIComponent(centre.image)})`,
-                  backgroundSize: '50%',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                }}
+                className="profit-card h-full group flex flex-col"
               >
-                <div className="card-body flex flex-col h-full">
+                {/* Image Container */}
+                <div className="w-full h-40 bg-gray-100 rounded-t-2xl overflow-hidden shrink-0">
+                  <img 
+                    src={`/images/${centre.image}`}
+                    alt={centre.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content Container */}
+                <div className="card-body flex flex-col flex-1 rounded-b-2xl">
                   <div className="flex items-start justify-between mb-3.5">
                     <div className="flex gap-2 flex-wrap flex-1">
                       {centre.tags.map((tag, i) => (

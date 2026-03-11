@@ -21,11 +21,11 @@ const Hero = () => {
               </p>
 
               <div className="flex gap-2.5 flex-wrap mb-0" style={{animation: 'slideUp 0.6s ease-out'}}>
-                <a href="#access" className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
+                <a href="/contact" className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
                   Request Membership Access
                 </a>
-                <a href="#questions" className="btn btn-secondary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
-                  See Questions We Answer
+                <a href="/#profit-centres" className="btn btn-secondary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
+                  Explore Solutions
                 </a>
               </div>
             </div>

@@ -1,0 +1,395 @@
+ODIECLOUD²π ECOSYSTEM - PHP PROJECT IMPLEMENTATION PROMPT
+=========================================================
+
+CRITICAL INSTRUCTIONS FOR AI/DEVELOPER:
+You are tasked with building a PHP website that MUST follow the ODIECLOUD²π ecosystem design system EXACTLY. Every page, component, and element must adhere to these specifications without deviation.
+
+═══════════════════════════════════════════════════════════════════
+
+PROJECT REQUIREMENTS:
+
+1. MANDATORY UNIVERSAL COMPONENTS (MUST BE ON EVERY PAGE)
+   --------------------------------------------------------
+   
+   A. TOPBAR (Top of every page)
+      - Background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #06b6d4 100%)
+      - Color: white
+      - Font size: 0.875rem (14px)
+      - Padding: 0.5rem 0
+      - Contains: Company message/announcement on left, links on right
+      - Must be sticky or fixed at top
+      - Create as: includes/topbar.php
+
+   B. NAVBAR (Below topbar on every page)
+      - Position: sticky, top: 0 (or after topbar)
+      - Background: rgba(255, 255, 255, 0.6) with backdrop-filter: blur(12px)
+      - Border bottom: 2px solid rgba(125, 211, 252, 0.4)
+      - Box shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+      - Must contain:
+        * Company logo (left side)
+        * Company name (font-weight: 900, font-size: 1.125rem)
+        * Company tagline (font-weight: 500, font-size: 0.75rem)
+        * Navigation links (center)
+        * Primary CTA button (right side)
+        * Globe icon for languages (right side)
+        * Email icon for contact (right side)
+      - Create as: includes/navbar.php
+
+   C. FOOTER (Bottom of every page)
+      - Background: linear-gradient(to bottom, #0d2438, #081827)
+      - Color: rgba(191, 219, 254, 0.78)
+      - Padding: 3rem 0 1.5rem
+      - Margin top: 4rem
+      - Must contain:
+        * Company logo and name section (first column)
+        * Company description
+        * "Member of ODIECLOUD²π Ecosystem." (bold)
+        * Multiple footer sections (Ecosystem, Communities, Legal, Help, Action)
+        * Footer bottom with EXACT text:
+          "All Oderson Holdings subsidiaries are Members of the ODIECLOUD²π Ecosystem."
+          "ODIECLOUD²π, ODIEBOARD, Oπ, ODIEXA, and AUREX are Registered Trademark and Service Marks of Oderson Holdings Ltd."
+          "Powered By ODIEBOARD" (right side, white, bold)
+      - Create as: includes/footer.php
+
+═══════════════════════════════════════════════════════════════════
+
+2. MANDATORY UNIVERSAL STYLING (MUST BE IN EVERY PAGE)
+   ----------------------------------------------------
+   
+   A. TYPOGRAPHY
+      - Font family: "Inter", sans-serif (REQUIRED)
+      - Import from Google Fonts: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap
+      - Font weights: 400, 500, 600, 700, 800, 900
+      - Body text: 16px (1rem), weight 400
+      - Headings: weight 700-900
+
+   B. BODY BACKGROUND (REQUIRED ON ALL PAGES)
+      body {
+        font-family: "Inter", sans-serif;
+        color: #0f172a;
+        background: 
+          radial-gradient(circle at 20% 10%, rgba(147, 197, 253, 0.15), transparent 35%),
+          radial-gradient(circle at 80% 90%, rgba(165, 243, 252, 0.15), transparent 35%),
+          radial-gradient(circle at 50% 50%, rgba(191, 219, 254, 0.08), transparent 50%),
+          linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0fdfa 100%);
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+   C. CONTAINER
+      - Max width: 1280px
+      - Padding: 0 1rem
+      - Margin: 0 auto
+
+   D. CREATE UNIVERSAL CSS FILE: assets/css/universal.css
+      - Include ALL universal styles
+      - Must be included in EVERY page via <link> tag
+
+═══════════════════════════════════════════════════════════════════
+
+3. MANDATORY BUTTON STYLES (USE THESE EXACT STYLES)
+   -------------------------------------------------
+   
+   A. PRIMARY BUTTON (.btn-primary)
+      - Background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%)
+      - Color: white
+      - Padding: 0.75rem 1.5rem
+      - Border radius: 9999px (fully rounded)
+      - Font weight: 600
+      - Font size: 0.875rem
+      - Box shadow: 0 4px 20px rgba(14, 165, 233, 0.25)
+      - Hover: translateY(-2px) + increased shadow
+
+   B. SECONDARY BUTTON (.btn-secondary)
+      - Background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240, 249, 255, 0.9))
+      - Color: #0369a1
+      - Border: 2px solid rgba(14, 165, 233, 0.3)
+      - Padding: 0.75rem 1.5rem
+      - Border radius: 9999px
+      - Font weight: 600
+      - Backdrop filter: blur(10px)
+
+═══════════════════════════════════════════════════════════════════
+
+4. MANDATORY CARD STYLES (TWO TYPES - USE APPROPRIATELY)
+   ------------------------------------------------------
+   
+   A. LIGHT CARDS (.card) - For general content
+      - Background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240, 249, 255, 0.9) 100%)
+      - Border: 2px solid rgba(14, 165, 233, 0.15)
+      - Border radius: 1.5rem (24px)
+      - Padding: 1.75rem (28px)
+      - Backdrop filter: blur(20px)
+      - Box shadow: 0 10px 40px rgba(14, 165, 233, 0.08), 0 0 0 1px rgba(14, 165, 233, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9)
+      - Hover: translateY(-8px) + enhanced shadow
+
+   B. DARK GRADIENT CARDS (.card-dark) - For special emphasis
+      - Background: linear-gradient(to right, #0a3558, #1d4ed8)
+      - Border: none
+      - Border radius: 1rem (16px)
+      - Padding: 1.75rem (28px)
+      - Box shadow: 0 10px 40px rgba(10, 53, 88, 0.3)
+      - Text color: white
+      - Hover: translateY(-16px) + background overlay + glow effect
+      - Use for: "Why this exists" sections, key benefits, value propositions
+
+═══════════════════════════════════════════════════════════════════
+
+5. MANDATORY HERO SECTION (HOME PAGE AND KEY PAGES)
+   -------------------------------------------------
+   
+   - Background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #06b6d4 100%)
+   - Border radius: 1.5rem
+   - Padding: 3rem 2rem (desktop), 2.5rem 1.5rem (mobile)
+   - Border: 1px solid rgba(255, 255, 255, 0.15)
+   - Box shadow: 0 20px 60px rgba(0, 0, 0, 0.3)
+   - Must contain:
+     * Optional badge with icon
+     * Hero title (white, 2.5-3rem, weight 700)
+     * Hero description (white 92% opacity, 1.125rem)
+     * Two buttons (primary and secondary)
+
+═══════════════════════════════════════════════════════════════════
+
+6. PHP PROJECT STRUCTURE (REQUIRED)
+   ---------------------------------
+   
+   project-root/
+   ├── index.php (Home page)
+   ├── includes/
+   │   ├── config.php (Database and site configuration)
+   │   ├── topbar.php (Universal topbar component)
+   │   ├── navbar.php (Universal navbar component)
+   │   ├── footer.php (Universal footer component)
+   │   └── head.php (Universal <head> section with CSS imports)
+   ├── assets/
+   │   ├── css/
+   │   │   ├── universal.css (ALL universal styles)
+   │   │   └── custom.css (Page-specific styles if needed)
+   │   ├── js/
+   │   │   └── main.js (JavaScript if needed)
+   │   └── images/
+   │       └── (Company logo and images)
+   ├── pages/
+   │   ├── about.php
+   │   ├── contact.php
+   │   ├── services.php
+   │   └── (Other pages)
+   └── README.md
+
+═══════════════════════════════════════════════════════════════════
+
+7. EVERY PAGE MUST FOLLOW THIS STRUCTURE
+   --------------------------------------
+   
+   <?php
+   // Include configuration
+   require_once 'includes/config.php';
+   ?>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <?php include 'includes/head.php'; ?>
+       <title>[Page Title] - [Company Name]</title>
+   </head>
+   <body>
+       <?php include 'includes/topbar.php'; ?>
+       <?php include 'includes/navbar.php'; ?>
+       
+       <main>
+           <!-- Page content here -->
+           <!-- MUST use universal card styles, buttons, and layouts -->
+       </main>
+       
+       <?php include 'includes/footer.php'; ?>
+       
+       <script src="assets/js/main.js"></script>
+   </body>
+   </html>
+
+═══════════════════════════════════════════════════════════════════
+
+8. INCLUDES/HEAD.PHP MUST CONTAIN
+   --------------------------------
+   
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="assets/css/universal.css">
+   <link rel="stylesheet" href="assets/css/custom.css">
+
+═══════════════════════════════════════════════════════════════════
+
+9. GRID SYSTEM (USE THESE EXACT CLASSES)
+   --------------------------------------
+   
+   .grid {
+     display: grid;
+     gap: 1.25rem;
+   }
+   
+   .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+   .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+   .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+   .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+   
+   @media (max-width: 768px) {
+     .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+       grid-template-columns: repeat(1, 1fr);
+     }
+   }
+
+═══════════════════════════════════════════════════════════════════
+
+10. COLOR PALETTE (USE THESE EXACT COLORS)
+    ---------------------------------------
+    
+    PRIMARY BLUE GRADIENT:
+    - linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%)
+    
+    TEXT COLORS:
+    - Primary: #0f172a (Slate 900)
+    - Secondary: #334155 (Slate 700)
+    - Muted: #475569 (Slate 600)
+    
+    BACKGROUND COLORS:
+    - Body: (See section 2B above)
+    - Cards: (See section 4 above)
+    - Hero: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #06b6d4 100%)
+    - Footer: linear-gradient(to bottom, #0d2438, #081827)
+
+═══════════════════════════════════════════════════════════════════
+
+11. RESPONSIVE BREAKPOINTS
+    -----------------------
+    
+    Mobile: < 768px
+    Tablet: 768px - 1024px
+    Desktop: > 1024px
+    
+    RULES:
+    - All grids collapse to 1 column on mobile
+    - Font sizes reduce by 10-20% on mobile
+    - Padding reduces by 30-50% on mobile
+    - Navbar becomes hamburger menu on mobile
+
+═══════════════════════════════════════════════════════════════════
+
+12. VALIDATION CHECKLIST (VERIFY EVERY PAGE)
+    -----------------------------------------
+    
+    □ Topbar is present and styled correctly
+    □ Navbar is present with logo, company name, tagline, links, and icons
+    □ Footer is present with all required sections and exact trademark text
+    □ Body background gradient is applied
+    □ Inter font is loaded and used throughout
+    □ All buttons use .btn-primary or .btn-secondary classes
+    □ All cards use .card or .card-dark classes
+    □ Hero section (if applicable) uses blue gradient background
+    □ Grid system is used for layouts
+    □ Universal colors are used throughout
+    □ Page is responsive on mobile, tablet, and desktop
+    □ All links work correctly
+    □ No custom styling that breaks the universal design system
+
+═══════════════════════════════════════════════════════════════════
+
+13. FORBIDDEN ACTIONS
+    ------------------
+    
+    
+
+    ✗ DO NOT use fonts other than Inter
+    ✗ DO NOT create custom button styles (use .btn-primary or .btn-secondary)
+    ✗ DO NOT create custom card styles (use .card or .card-dark)
+    ✗ DO NOT change the topbar, navbar, or footer structure
+    ✗ DO NOT use different color schemes
+    ✗ DO NOT skip including topbar, navbar, or footer on any page
+    ✗ DO NOT change the footer trademark text
+    ✗ DO NOT use inline styles that override universal styles
+
+═══════════════════════════════════════════════════════════════════
+
+14. EXAMPLE PAGE IMPLEMENTATION
+    ----------------------------
+    
+    FILE: pages/about.php
+    
+    <?php require_once '../includes/config.php'; ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <?php include '../includes/head.php'; ?>
+        <title>About Us - [Company Name]</title>
+    </head>
+    <body>
+        <?php include '../includes/topbar.php'; ?>
+        <?php include '../includes/navbar.php'; ?>
+        
+        <main>
+            <!-- Hero Section -->
+            <section style="padding: 2rem 1rem;">
+                <div class="container">
+                    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #06b6d4 100%); border-radius: 1.5rem; padding: 3rem 2rem; color: white;">
+                        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">About [Company Name]</h1>
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem;">Brief company description here.</p>
+                        <a href="contact.php" class="btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Content Section with Cards -->
+            <section style="padding: 3.5rem 1rem;">
+                <div class="container">
+                    <h2 style="font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 2.5rem;">Our Values</h2>
+                    <div class="grid grid-cols-3">
+                        <div class="card">
+                            <h3 class="card-title">Value 1</h3>
+                            <p class="card-text">Description of value 1</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title">Value 2</h3>
+                            <p class="card-text">Description of value 2</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title">Value 3</h3>
+                            <p class="card-text">Description of value 3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <?php include '../includes/footer.php'; ?>
+        <script src="../assets/js/main.js"></script>
+    </body>
+    </html>
+
+═══════════════════════════════════════════════════════════════════
+
+15. FINAL INSTRUCTIONS FOR AI/DEVELOPER
+    ------------------------------------
+    
+    When building this PHP project:
+    
+    1. Start by creating the universal components (topbar, navbar, footer)
+    2. Create the universal.css file with ALL required styles
+    3. Create the head.php file with proper imports
+    4. Build each page following the exact structure shown above
+    5. Test every page to ensure all universal components are present
+    6. Verify all styling matches the design system exactly
+    7. Ensure responsive design works on all breakpoints
+    8. Do NOT deviate from these specifications under any circumstances
+    
+    REMEMBER: This is an ecosystem-wide design system. Every website in the ODIECLOUD²π ecosystem must look and feel like ONE unified platform. Consistency is CRITICAL.
+
+═══════════════════════════════════════════════════════════════════
+
+REFERENCE FILES:
+- UNIVERSAL-TEMPLATE.html (Complete HTML template)
+- COMPLETE-WEBSITE-TEMPLATE.html (Full page structure example)
+- DESIGN-SYSTEM-DOCUMENTATION.txt (Detailed specifications)
+
+═══════════════════════════════════════════════════════════════════
+
+END OF PROMPT
