@@ -60,7 +60,7 @@ const WhyWebsite = () => {
                   }}
                 ></div>
                 
-                {/* Glow effect on hover */}
+                {/* Glow effect hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 rounded-b-2xl" 
                   style={{
                     background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.5), transparent)'
