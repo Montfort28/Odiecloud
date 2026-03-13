@@ -37,7 +37,7 @@ const Footer = () => {
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Subsidiaries</a>
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Equity Affiliates</a>
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Equity Partners</a>
-            <a href="/#communities" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Strategic Partnerships</a>            
+            <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Strategic Partnerships</a>            
             <a href="#about" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">About</a>
             <a href="/contact" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Contact</a>
             <a href="/questions" className="block text-blue-100/78 text-sm mb-4 hover:text-white transition-colors">Questions and Answers</a>
