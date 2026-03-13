@@ -57,7 +57,7 @@ const Header = () => {
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2"
                 style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
               >
-                Join The Ecosystem
+                Become A Member
               </a>
               <button 
                 className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
@@ -114,7 +114,7 @@ const Header = () => {
                 ))}
                 <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-sky-100/50">
                   <a href="/contact" className="btn btn-primary text-sm w-full" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}>
-                    Join Ecosystem
+                    Become A Member
                   </a>
                 </div>
               </nav>
