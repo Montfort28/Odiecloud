@@ -19,9 +19,6 @@ const Footer = () => {
             <p className="text-blue-100/78 text-sm mb-2">
               Governance-engineered ecosystem access for growth, partnerships, technology, trade, capital, and coordinated participation.
             </p>
-            <p className="text-blue-100/78 text-sm m-0">
-              <strong>Member of ODIECLOUD²π Ecosystem.</strong>
-            </p>
           </div>
 
           {/* Ecosystem Links */}
@@ -40,7 +37,10 @@ const Footer = () => {
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Subsidiaries</a>
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Equity Affiliates</a>
             <a href="/#communities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Equity Partners</a>
-            <a href="/#communities" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Strategic Partnerships</a>
+            <a href="/#communities" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Strategic Partnerships</a>            
+            <a href="#about" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">About</a>
+            <a href="/contact" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Contact</a>
+            <a href="/questions" className="block text-blue-100/78 text-sm mb-4 hover:text-white transition-colors">Questions and Answers</a>
           </div>
 
           {/* Networks Links */}
@@ -53,11 +53,6 @@ const Footer = () => {
 
           {/* Help and Action Links Combined */}
           <div>
-            <h4 className="m-0 mb-3 text-base font-black text-white">Help</h4>
-            <a href="#about" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">About</a>
-            <a href="/contact" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Contact</a>
-            <a href="/questions" className="block text-blue-100/78 text-sm mb-4 hover:text-white transition-colors">Questions and Answers</a>
-            
             <h4 className="m-0 mb-3 text-base font-black text-white">Action</h4>
             <a href="/contact" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Become a Member</a>
             <a href="/#opportunities" className="block text-blue-100/78 text-sm mb-2 hover:text-white transition-colors">Explore Opportunities</a>
@@ -66,18 +61,21 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-white/10 pt-6">
-          <div className="flex justify-between gap-4 flex-wrap text-blue-100/78 text-sm items-center">
+        <div className="border-t border-white/10 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-blue-100/78 text-sm">
             <div>
-              <p className="text-blue-100/78 text-sm m-0 mb-2">
-                All Oderson Holdings subsidiaries are Members of the ODIECLOUD²π Ecosystem.
+              <p className="text-blue-100/78 text-sm m-0 mb-3">
+                Member of ODIECLOUD²π Ecosystem.
               </p>
-              <p className="text-blue-100/78 text-sm m-0">
+              <p className="text-blue-100/78 text-sm m-0 mb-4 leading-relaxed">
                 ODIECLOUD²π, ODIEBOARD, Oπ, ODIEXA, and AUREX are Registered Trademark and Service Marks of Oderson Holdings Ltd.
               </p>
+              <p className="text-blue-100/78 text-sm m-0">
+                © Copyright ODERSON Holdings Ltd. All Rights Reserved.
+              </p>
             </div>
-            <div>
-              <strong className="text-white">Powered By ODIEBOARD</strong>
+            <div className="text-blue-100/78 text-sm m-0 flex items-center justify-end">
+              <p className="m-0">Powered By <strong className="text-white">ODIEBOARD</strong></p>
             </div>
           </div>
         </div>

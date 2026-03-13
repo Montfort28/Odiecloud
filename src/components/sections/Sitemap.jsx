@@ -1,72 +1,68 @@
 const SitemapSection = () => {
-  const pages = [
+  const testimonials = [
     {
-      title: "Home",
-      description: "Hero, ecosystem overview, key questions answered, profit-centre summary, opportunity corridors, and access CTA."
+      rating: 5,
+      quote: "ODIECLOUD²π provides the governance framework we needed to scale our operations across multiple markets. The ecosystem access is seamless and the support structure is unparalleled.",
+      name: "Strategic Partner Director",
+      category: "Technology Partnership Member"
     },
     {
-      title: "Ecosystem",
-      description: "Explains ODIECLOUD²π architecture, governance-first philosophy, operating model, and public-facing logic."
+      rating: 5,
+      quote: "The coordinated participation model has transformed how we approach trade and capital opportunities. The qualification process ensures quality membership and genuine collaboration.",
+      name: "Investment Portfolio Manager",
+      category: "Equity Partner"
     },
     {
-      title: "Solutions",
-      description: "Dedicated pages for each profit centre, framed as solutions to practical market and organizational problems."
-    },
-    {
-      title: "Opportunities",
-      description: "Business, investment, manufacturing, and trade opportunity pages with controlled positioning and access CTA."
-    },
-    {
-      title: "Membership",
-      description: "Explains community types, participation benefits, who should apply, and what happens after submission."
-    },
-    {
-      title: "Request Access",
-      description: "The primary conversion page, containing the ecosystem access form and qualification logic."
+      rating: 5,
+      quote: "Being part of the ODIECLOUD²π ecosystem has opened doors to growth opportunities we couldn't access independently. The governance-first approach builds confidence and long-term partnerships.",
+      name: "Future-Ready Entrepreneur",
+      category: "Subsidiary Leadership Member"
     }
   ]
 
+  const StarRating = ({ rating }) => {
+    return (
+      <div className="flex gap-1 mb-4">
+        {[...Array(rating)].map((_, i) => (
+          <span key={i} className="text-amber-400 text-lg">★</span>
+        ))}
+      </div>
+    )
+  }
+
   return (
-    <section className="py-8.5 px-2 bg-blue-50/90">
+    <section className="py-12.5 px-2 bg-blue-50/90">
       <div className="container">
-        <div className="max-w-2xl mx-auto mb-7 text-center">
+        <div className="max-w-2xl mx-auto mb-10 text-center">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-[#0c1f32]">
-            Suggested sitemap blueprint
+            What ecosystem members value most
           </h2>
           <p className="m-0 text-muted text-base md:text-lg">
-            This public site should be built as a high-clarity conversion and qualification website, not just an informational brochure.
+            ODIECLOUD²π creates transformative partnerships through governance-engineered access for growth, technology, trade, and coordinated capital participation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4.5">
-          {pages.map((page, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="relative overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl cursor-pointer group bg-linear-to-r from-[#0a3558] to-blue-700"
+              className="relative overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-7 bg-white border border-blue-100"
               style={{
                 animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
               }}
             >
-              {/* Hover background overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                style={{
-                  background: 'linear-gradient(to right, #1a5fa5, #3b9eff)'
-                }}
-              ></div>
+              <StarRating rating={testimonial.rating} />
               
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" 
-                style={{
-                  background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.5), transparent)'
-                }}
-              ></div>
+              <p className="m-0 mb-5 text-base text-gray-700 leading-relaxed font-medium">
+                "{testimonial.quote}"
+              </p>
               
-              <div className="relative z-10 p-7">
-                <h3 className="m-0 mb-3 text-xl font-black text-white group-hover:text-sky-200 transition-colors duration-300">
-                  {page.title}
-                </h3>
-                <p className="m-0 text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
-                  {page.description}
+              <div>
+                <p className="m-0 text-base font-black text-[#0c1f32]">
+                  {testimonial.name}
+                </p>
+                <p className="m-0 text-base text-gray-500 font-medium">
+                  {testimonial.category}
                 </p>
               </div>
             </div>
