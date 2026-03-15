@@ -13,19 +13,19 @@ const Hero = () => {
               </div>
 
               <h1 className="text-white m-0 mb-2 text-3xl md:text-4xl lg:text-5xl leading-[1.2] font-bold max-w-4xl hover:drop-shadow-lg transition-all duration-300" style={{fontFamily: '"Inter", sans-serif', fontWeight: 700, letterSpacing: '-0.02em'}}>
-                Digitizing Global Africa into a governed and investable marketplace.
+                Digitizing Global Africa Into A Unified Economic Ecosystem
               </h1>
 
               <p className="text-white/92 m-0 mb-4 text-base md:text-lg leading-relaxed max-w-2xl" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
-                This live demo is the front-end master system for the ODIECLOUD²π web estate. It is built to be cloned across the ecosystem root, marketplace, founder, technology, Channel Partner, and company domains with no visual break.
+                ODIECLOUD²π is a governance-engineered digital and commercial infrastructure designed to connect businesses, entrepreneurs, investors, and innovators across Africa and the global diaspora into one structured marketplace.
               </p>
 
               <div className="flex gap-2.5 flex-wrap mb-0" style={{animation: 'slideUp 0.6s ease-out'}}>
                 <a href="/contact" className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
-                  Request Membership Access
+                  Request Access
                 </a>
-                <a href="/#profit-centres" className="btn btn-secondary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
-                  Explore Solutions
+                <a href="/membership" className="btn btn-secondary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2">
+                  Become a Member
                 </a>
               </div>
             </div>

@@ -4,11 +4,10 @@ const Topbar = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const messages = [
-    "Membership enables structured entry into governance, market access, partnerships, capital-ready systems, and ecosystem solutions.",
-    "Business Opportunities: activate growth through ODIEBOARD, Channel Partners, and ecosystem distribution architecture.",
-    "Trade Opportunities: enter ODIEXA-aligned trade pathways with disciplined structure, partner access, and cross-border logic.",
-    "Manufacturing Opportunities: connect sourcing, production, market access, and governance-backed execution.",
-    "Investment Opportunities: request access for ecosystem briefings, structured participation pathways, and vetted engagement channels."
+    "ODIECLOUD²π is now onboarding founding members across Africa, the Caribbean, and the global diaspora.",
+    "Apply for ecosystem membership to access business, technology, trade, and investment opportunities.",
+    "Developers, entrepreneurs, and strategic partners are invited to join the ODIECLOUD²π Tech Hub.",
+    "Explore the Unified Marketplace connecting businesses, investors, and innovators."
   ]
 
   useEffect(() => {

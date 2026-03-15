@@ -1,4 +1,4 @@
-import { HiBriefcase, HiServer, HiShoppingCart, HiLightningBolt, HiTrendingUp, HiStar, HiCash, HiGlobeAlt } from 'react-icons/hi'
+import { HiBriefcase, HiServer, HiShoppingCart, HiLightningBolt, HiTrendingUp, HiStar, HiCurrencyDollar, HiGlobeAlt } from 'react-icons/hi'
 
 const ProfitCentres = () => {
   const profitCentres = [
@@ -83,7 +83,7 @@ const ProfitCentres = () => {
     {
       tags: ["Capital", "Integrity"],
       title: "Capital Command",
-      icon: HiCash,
+      icon: HiCurrencyDollar,
       image: "image 7.jpg",
       problem: "Growth without financial discipline creates instability, leakage, and weak institutional confidence.",
       items: [

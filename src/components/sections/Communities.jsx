@@ -1,11 +1,11 @@
-import { HiLibrary, HiShieldCheck, HiCash, HiLightBulb, HiChip, HiSpeakerphone, HiBookOpen } from 'react-icons/hi'
+import { HiBriefcase, HiShieldCheck, HiCurrencyDollar, HiSparkles, HiServer, HiSpeakerphone, HiStar } from 'react-icons/hi'
 
 const CommunitiesSection = () => {
   const communities = [
     {
       title: "Subsidiaries",
       description: "Wholly or majority controlled ecosystem operating entities aligned to ODIEBOARD and ecosystem standards.",
-      icon: HiLibrary
+      icon: HiBriefcase
     },
     {
       title: "Equity Affiliates",
@@ -15,17 +15,17 @@ const CommunitiesSection = () => {
     {
       title: "Equity Partners",
       description: "Partnerships structured around shared participation, strategic growth, and coordinated value creation.",
-      icon: HiCash
+      icon: HiCurrencyDollar
     },
     {
       title: "Strategic Partnerships",
       description: "External institutions, firms, and entities connected to the ecosystem for defined strategic collaboration.",
-      icon: HiLightBulb
+      icon: HiSparkles
     },
     {
       title: "Technology Partnerships (Tech Hub)",
       description: "Builders, developers, and technology organizations connected through Oπ and the broader innovation framework.",
-      icon: HiChip
+      icon: HiServer
     },
     {
       title: "Channel Partner Network",
@@ -35,7 +35,7 @@ const CommunitiesSection = () => {
     {
       title: "Internship Networks",
       description: "Structured entry pathways for students, trainees, and emerging talent aligned to the ecosystem pipeline.",
-      icon: HiBookOpen
+      icon: HiStar
     }
   ]
 
