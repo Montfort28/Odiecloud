@@ -32,7 +32,7 @@ const WhatIsODIECLOUD = () => {
                 <ul className="m-0 p-0 list-none space-y-3">
                   {components.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 group">
-                      <div className="shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                      <div className="shrink-0 w-6 h-6 rounded-full bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform duration-300">
                         <HiCheckCircle className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-slate-700 leading-relaxed">{item}</span>
@@ -44,10 +44,10 @@ const WhatIsODIECLOUD = () => {
               {/* Right: Visual Circle */}
               <div className="flex justify-center items-center">
                 <div className="relative w-64 h-64">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-200 to-blue-300/40 blur-2xl opacity-50 animate-pulse"></div>
-                  <div className="absolute inset-0 rounded-full border-4 border-sky-300/50 flex items-center justify-center hover:border-sky-400/70 transition-all duration-300 hover:scale-105 cursor-pointer group bg-gradient-to-br from-sky-50 to-blue-50">
+                  <div className="absolute inset-0 rounded-full bg-linear-to-br from-sky-200 to-blue-300/40 blur-2xl opacity-50 animate-pulse"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-sky-300/50 flex items-center justify-center hover:border-sky-400/70 transition-all duration-300 hover:scale-105 cursor-pointer group bg-linear-to-br from-sky-50 to-blue-50">
                     <div className="text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:shadow-sky-500/50 transition-all duration-300">
+                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:shadow-sky-500/50 transition-all duration-300">
                         <HiGlobe className="w-14 h-14 text-white" />
                       </div>
                       <p className="text-slate-900 font-black text-lg">Unified Ecosystem</p>

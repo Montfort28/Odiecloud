@@ -31,7 +31,7 @@ const EcosystemParticipation = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-gradient-to-b from-sky-50 to-white" id="participation">
+    <section className="py-8.5 px-2 bg-linear-to-b from-sky-50 to-white" id="participation">
       <div className="container">
         <div className="max-w-3xl mx-auto mb-8 text-center animate-slide-up">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-slate-900">
@@ -58,7 +58,7 @@ const EcosystemParticipation = () => {
           ))}
         </div>
 
-        <div className="mt-8 p-6 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center">
+        <div className="mt-8 p-6 rounded-lg bg-linear-to-r from-blue-600 to-cyan-600 text-white text-center">
           <h3 className="text-2xl font-black m-0 mb-2">Become Part of the Ecosystem</h3>
           <p className="m-0 text-white/90 mb-4">Choose the participation model that best fits your organization.</p>
           <a href="/contact" className="inline-block px-6 py-3 rounded-full bg-white text-blue-700 font-bold hover:bg-blue-50 hover:shadow-lg transform hover:scale-105 transition-all duration-300">

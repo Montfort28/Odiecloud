@@ -35,7 +35,7 @@ const EcosystemAdvantage = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-gradient-to-b from-sky-50 to-white">
+    <section className="py-8.5 px-2 bg-linear-to-b from-sky-50 to-white">
       <div className="container">
         <div className="max-w-4xl mx-auto mb-8 text-center">
           <h2 className="m-0 mb-4 text-4xl md:text-4xl lg:text-4xl leading-tight -tracking-wider font-black text-slate-900">
@@ -62,7 +62,7 @@ const EcosystemAdvantage = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/50 transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/50 transition-all duration-300">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="m-0 mb-2 text-lg font-black text-slate-900 group-hover:text-sky-700 transition-colors">
