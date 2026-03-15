@@ -7,7 +7,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <img 
-                src="/images/cloud 2.png" 
+                src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
                 className="w-20 h-auto object-contain"
               />
@@ -41,16 +41,24 @@ const Footer = () => {
           {/* Core Services */}
           <div>
             <h4 className="m-0 mb-3.5 text-base font-black text-white uppercase tracking-wider">Core Services</h4>
-            <div className="space-y-2 text-sm">
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Group Travel & Tours (Worldwide)</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Real Estate Developers / Investors</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Technology & Cloud Services</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Engineering Technology Services</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Health & Wellness</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Business Development</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Business Brokering</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Business Start Up / Restructuring</p>
-              <p className="text-blue-100/78 m-0 hover:text-white transition-colors cursor-pointer">Investment Banking</p>
+            <div className="space-y-2">
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Group Travel & Tours (Worldwide)</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Real Estate Developers / Investors</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Technology & Cloud Services</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Engineering Technology Services</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Health & Wellness</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Business Development</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Business Brokering</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 mb-2 hover:text-white transition-colors cursor-pointer">Business Start Up / Restructuring</p>
+              
+              <p className="text-blue-100/78 text-sm m-0 hover:text-white transition-colors cursor-pointer">Investment Banking</p>
             </div>
           </div>
 

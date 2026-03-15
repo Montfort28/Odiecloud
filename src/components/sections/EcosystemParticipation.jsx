@@ -58,11 +58,11 @@ const EcosystemParticipation = () => {
           ))}
         </div>
 
-        <div className="mt-8 p-6 rounded-lg bg-gradient-to-r from-sky-600 to-blue-700 text-white text-center">
-          <h3 className="text-2xl font-black m-0 mb-2">Ready to Join?</h3>
+        <div className="mt-8 p-6 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center">
+          <h3 className="text-2xl font-black m-0 mb-2">Become Part of the Ecosystem</h3>
           <p className="m-0 text-white/90 mb-4">Choose the participation model that best fits your organization.</p>
-          <a href="/contact" className="btn btn-primary text-sm px-6 py-2.5">
-            Request Access Today
+          <a href="/contact" className="inline-block px-6 py-3 rounded-full bg-white text-blue-700 font-bold hover:bg-blue-50 hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+            Request Access
           </a>
         </div>
       </div>

@@ -60,7 +60,7 @@ const Header = () => {
             {/* Left: Logo - Clickable */}
             <a href="/" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
               <img 
-                src="/images/cloud 2.png" 
+                src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
                 className="w-18 h-auto object-contain"
               />
@@ -85,7 +85,6 @@ const Header = () => {
                       className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-sky-700 transition-colors duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-sky-50/50 group"
                       style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
                     >
-                      <IconComponent className="w-4.5 h-4.5" />
                       <span>{link.label}</span>
                       <HiChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
                     </button>
@@ -152,7 +151,7 @@ const Header = () => {
           <div className="flex items-center justify-between gap-4 min-h-17.5 py-3">
             <a href="/" className="flex items-center gap-2 shrink-0">
               <img 
-                src="/images/cloud 2.png" 
+                src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
                 className="w-12 h-auto object-contain"
               />
@@ -182,10 +181,7 @@ const Header = () => {
                         className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 transition-all duration-300"
                         style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
                       >
-                        <span className="flex items-center gap-2">
-                          <IconComponent className="w-4.5 h-4.5" />
-                          {link.label}
-                        </span>
+                        <span>{link.label}</span>
                         <HiChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                       </button>
                       

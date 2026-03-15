@@ -66,18 +66,20 @@ const BusinessOpportunitiesPage = () => {
               return (
                 <div
                   key={idx}
-                  className="card group border-2 border-blue-200/60 hover:border-blue-400 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                  className="card group border-2 border-blue-200/60 hover:border-blue-400 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 text-center"
                   style={{animation: `slideUp 0.6s ease-out ${idx * 0.1}s both`}}
                 >
-                  <div className="w-16 h-16 mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-blue-500/50 transition-all duration-300">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center">
+                    <div className="w-16 h-16 mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-blue-500/50 transition-all duration-300">
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="m-0 mb-2 text-lg font-black text-slate-900 group-hover:text-blue-700 transition-colors">
+                      {opp.title}
+                    </h3>
+                    <p className="m-0 text-xs text-slate-600 leading-relaxed">
+                      {opp.description}
+                    </p>
                   </div>
-                  <h3 className="m-0 mb-2 text-lg font-black text-slate-900 group-hover:text-blue-700 transition-colors">
-                    {opp.title}
-                  </h3>
-                  <p className="m-0 text-sm text-slate-600 leading-relaxed">
-                    {opp.description}
-                  </p>
                 </div>
               )
             })}

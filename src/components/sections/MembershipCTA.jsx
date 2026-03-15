@@ -1,6 +1,6 @@
 const MembershipCTA = () => {
   return (
-    <section className="py-8.5 px-2 bg-gradient-to-br from-sky-600 to-blue-700">
+    <section className="py-12 px-2 bg-gradient-to-br from-[#0d2438] to-[#081827] -mb-10.5">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="m-0 mb-4 text-4xl md:text-4xl lg:text-4xl leading-tight -tracking-wider font-black">

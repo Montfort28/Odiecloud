@@ -61,20 +61,18 @@ const OpportunitiesCards = () => {
           {opportunities.map((opp) => (
             <div
               key={opp.id}
-              className={`p-6 rounded-xl border border-gradient-to-r border-slate-200 bg-gradient-to-br ${opp.color} from-slate-50 to-sky-50/40 hover:shadow-2xl transition-all duration-300 group overflow-hidden`}
+              className={`p-6 rounded-xl border border-gradient-to-r border-slate-200 bg-gradient-to-br ${opp.color} from-slate-50 to-sky-50/40 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center`}
               id={opp.id}
             >
               <div className="relative z-10">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="text-5xl">{opp.icon}</div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-black text-slate-900 m-0 mb-1 group-hover:text-blue-700 transition-colors">
-                      {opp.category}
-                    </h3>
-                    <p className="m-0 text-sm text-slate-600">
-                      {opp.description}
-                    </p>
-                  </div>
+                <div className="flex flex-col items-center mb-4">
+                  <div className="text-5xl mb-3">{opp.icon}</div>
+                  <h3 className="text-xl font-black text-slate-900 m-0 mb-1 group-hover:text-blue-700 transition-colors">
+                    {opp.category}
+                  </h3>
+                  <p className="m-0 text-xs text-slate-600">
+                    {opp.description}
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">

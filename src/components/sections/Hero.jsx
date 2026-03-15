@@ -3,6 +3,10 @@ const Hero = () => {
     <section className="py-6 md:py-8 px-2" id="overview">
       <div className="container">
         <div className="bg-linear-to-br from-blue-900 via-blue-800 to-cyan-400 rounded-3xl overflow-hidden border border-white/15 shadow-2xl relative group hover:shadow-glow-lg transition-all duration-300">
+          {/* Background Image with Opacity */}
+          <div className="absolute inset-0 opacity-20">
+            <img src="/images/image 7.jpg" alt="" className="w-full h-full object-cover" />
+          </div>
           <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-4 items-center p-5 md:p-8 relative z-10">
             {/* Left Content */}

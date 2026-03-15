@@ -79,19 +79,17 @@ const SolutionCards = () => {
           {solutions.map((solution) => (
             <div
               key={solution.id}
-              className="p-6 rounded-xl border border-sky-100/50 bg-gradient-to-br from-white/90 to-sky-50/40 hover:shadow-2xl hover:border-sky-400 transition-all duration-300 group"
+              className="p-6 rounded-xl border border-sky-100/50 bg-gradient-to-br from-white/90 to-sky-50/40 hover:shadow-2xl hover:border-sky-400 transition-all duration-300 group text-center"
               id={solution.id}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="text-4xl">{solution.icon}</div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-black text-slate-900 m-0 mb-1 group-hover:text-sky-700 transition-colors">
-                    {solution.title}
-                  </h3>
-                  <p className="m-0 text-sm text-slate-600">
-                    {solution.description}
-                  </p>
-                </div>
+              <div className="flex flex-col items-center mb-4">
+                <div className="text-4xl mb-3">{solution.icon}</div>
+                <h3 className="text-xl font-black text-slate-900 m-0 mb-1 group-hover:text-sky-700 transition-colors">
+                  {solution.title}
+                </h3>
+                <p className="m-0 text-xs text-slate-600">
+                  {solution.description}
+                </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
