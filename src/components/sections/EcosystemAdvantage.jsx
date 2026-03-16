@@ -6,31 +6,31 @@ const EcosystemAdvantage = () => {
       icon: HiOfficeBuilding,
       title: 'Governance Infrastructure',
       description: 'Businesses integrate into a structured governance framework that enables scalability and compliance.',
-      image: 'image 1.jpg'
+      image: 'Comprehensive Market Research Services_ Empowering Informed Decision-Making.jpg'
     },
     {
       icon: HiShoppingCart,
       title: 'Market Access',
       description: 'Members gain access to a unified marketplace connecting multiple industries and regions.',
-      image: 'image 2.jpg'
+      image: 'image 1.jpg'
     },
     {
       icon: HiServer,
       title: 'Technology Infrastructure',
       description: 'Enterprises access cloud systems, collaboration tools, and development platforms.',
-      image: 'image 3.jpg'
+      image: 'Free Photo.jpg'
     },
     {
       icon: HiUserGroup,
       title: 'Human Capital Networks',
       description: 'Entrepreneurs, developers, marketers, and advisors collaborate through a structured community.',
-      image: 'image 4.jpg'
+      image: 'How to Build a Blog to Over 1 Million Monthly Visitors.jpg'
     },
     {
       icon: HiGlobeAlt,
       title: 'Global Expansion',
       description: 'Businesses can scale internationally through ecosystem partnerships.',
-      image: 'image 5.jpg'
+      image: 'The Role of B2B Digital Marketing Agencies in the USA.jpg'
     }
   ]
 

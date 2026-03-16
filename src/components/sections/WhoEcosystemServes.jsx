@@ -6,13 +6,13 @@ const WhoEcosystemServes = () => {
       icon: HiLightningBolt,
       role: 'Entrepreneurs',
       description: 'Launching new ventures with access to capital, mentorship, and market infrastructure.',
-      image: 'image 6.jpg'
+      image: 'digital marketing.jpg'
     },
     {
       icon: HiOfficeBuilding,
       role: 'Established Companies',
       description: 'Seeking expansion into new markets and strategic partnership opportunities.',
-      image: 'image 7.jpg'
+      image: 'How to Reduce Network Latency - Bleuwire.jpg'
     },
     {
       icon: HiCurrencyDollar,
@@ -24,19 +24,19 @@ const WhoEcosystemServes = () => {
       icon: HiCode,
       role: 'Technology Developers',
       description: 'Building digital systems and accessing funding, distribution, and collaboration networks.',
-      image: 'image 9.jpg'
+      image: 'image 10.jpg'
     },
     {
       icon: HiBriefcase,
       role: 'Freelancers & Professionals',
       description: 'Offering services and connecting with opportunities across the ecosystem.',
-      image: 'image 10.jpg'
+      image: 'image 16.jpg'
     },
     {
       icon: HiUserGroup,
       role: 'Strategic Partners',
       description: 'Collaborating across industries on joint ventures and market expansion.',
-      image: 'image 11.jpg'
+      image: 'image 6.jpg'
     }
   ]
 
@@ -68,7 +68,7 @@ const WhoEcosystemServes = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/50 transition-all duration-300">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/50 transition-all duration-300">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="m-0 mb-2 text-base font-black text-slate-900 group-hover:text-sky-700 transition-colors">

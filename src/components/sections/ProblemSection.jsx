@@ -6,13 +6,13 @@ const ProblemSection = () => {
       icon: HiExclamationCircle,
       title: "Businesses Operate Independently",
       description: "Without integrated systems, scaling across markets becomes inefficient and expensive.",
-      image: 'image 12.jpg'
+      image: 'Generate Images in PicLumen.jpg'
     },
     {
       icon: HiCurrencyDollar,
       title: "Investors Struggle to Access Opportunities",
       description: "Capital remains disconnected from real business opportunities due to information asymmetry.",
-      image: 'image 13.jpg'
+      image: '🚀 Transform Your Financial Management with AVCiT! 📈🔒.jpg'
     },
     {
       icon: HiLightningBolt,
@@ -24,12 +24,12 @@ const ProblemSection = () => {
       icon: HiCode,
       title: "Technology Talent Remains Disconnected",
       description: "Innovation hubs lack connection to capital markets and commercial opportunities.",
-      image: 'image 15.jpg'
+      image: 'HOME.jpg'
     }
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-gradient-to-b from-sky-50 to-white">
+    <section className="py-8.5 px-2 bg-linear-to-b from-sky-50 to-white">
       <div className="container">
         <div className="max-w-4xl mx-auto mb-8 text-center">
           <h2 className="m-0 mb-4 text-4xl md:text-4xl lg:text-4xl leading-tight -tracking-wider font-black text-slate-900">
@@ -58,7 +58,7 @@ const ProblemSection = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 mx-auto mb-3 rounded-xl bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-slate-900 font-black text-lg m-0 mb-2">{problem.title}</h3>
