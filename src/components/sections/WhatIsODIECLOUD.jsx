@@ -15,7 +15,7 @@ const WhatIsODIECLOUD = () => {
       <div className="container">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="m-0 mb-4 text-3xl md:text-4xl lg:text-5xl leading-tight -tracking-wider font-black text-slate-900">
+            <h2 className="m-0 mb-4 text-4xl md:text-4xl lg:text-4xl leading-tight -tracking-wider font-black text-slate-900">
               What Is ODIECLOUD²π
             </h2>
             <p className="m-0 mb-6 text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">

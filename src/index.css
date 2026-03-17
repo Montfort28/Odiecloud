@@ -67,7 +67,6 @@ body::before {
 
 a {
   @apply no-underline;
-  color: inherit;
 }
 
 img {

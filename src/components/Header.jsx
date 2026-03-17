@@ -49,6 +49,10 @@ const Header = () => {
         { href: '/contact', label: 'Apply for Membership', icon: HiClipboardCheck },
       ]
     },
+    { 
+      label: 'Request Access', 
+      href: '/contact',
+    },
   ]
 
   return (
@@ -73,6 +77,18 @@ const Header = () => {
             {/* Middle: Navigation Links - All on one line */}
             <nav className="flex gap-1 items-center flex-nowrap">
               {navLinks.map((link) => {
+                if (link.href && !link.submenu) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-sky-700 transition-colors duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-sky-50/50 group"
+                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                    >
+                      <span>{link.label}</span>
+                    </a>
+                  )
+                }
                 const IconComponent = link.icon
                 return (
                   <div
@@ -120,14 +136,14 @@ const Header = () => {
               })}
             </nav>
 
-            {/* Right: Join Ecosystem Button + Icons */}
+            {/* Right: Become A Member Button + Icons */}
             <div className="flex gap-3 items-center shrink-0">
               <a 
                 href="/contact" 
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2"
                 style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
               >
-                Join The Ecosystem
+                Become A Member
               </a>
               <button 
                 className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
@@ -160,60 +176,81 @@ const Header = () => {
               </div>
             </a>
 
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl hover:bg-sky-50 transition-colors duration-300"
-            >
-              {mobileMenuOpen ? <HiX className="w-6 h-6 text-slate-700" /> : <HiMenu className="w-6 h-6 text-slate-700" />}
-            </button>
+            <div className="flex items-center gap-2">
+              <button 
+                className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
+                title="Languages (coming soon)"
+              >
+                <HiGlobeAlt className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
+              </button>
+              <a 
+                href="/contact"
+                className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
+                title="Contact Us"
+              >
+                <HiMail className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
+              </a>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2.5 rounded-xl hover:bg-sky-50 transition-colors duration-300"
+              >
+                {mobileMenuOpen ? <HiX className="w-6 h-6 text-slate-700" /> : <HiMenu className="w-6 h-6 text-slate-700" />}
+              </button>
+            </div>
           </div>
 
           {mobileMenuOpen && (
-            <div className="pb-4 border-t border-sky-100/50">
-              <nav className="flex flex-col gap-2 pt-4">
-                {navLinks.map((link) => {
-                  const IconComponent = link.icon
-                  const isOpen = openDropdown === link.label
+            <div className="pb-4 border-t border-sky-100 space-y-2">
+              {navLinks.map((link) => {
+                if (link.href && !link.submenu) {
                   return (
-                    <div key={link.label}>
-                      <button
-                        onClick={() => setOpenDropdown(isOpen ? null : link.label)}
-                        className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 transition-all duration-300"
-                        style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
-                      >
-                        <span>{link.label}</span>
-                        <HiChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-                      </button>
-                      
-                      {/* Mobile Dropdown */}
-                      {isOpen && link.submenu && (
-                        <div className="bg-gradient-to-r from-sky-50/80 to-blue-50/80 rounded-lg my-1 ml-4 border border-sky-100/50">
-                          {link.submenu.map((item) => {
-                            const ItemIcon = item.icon
-                            return (
-                              <a
-                                key={item.href}
-                                href={item.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-sky-700 hover:bg-sky-100/50 transition-colors"
-                                style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}
-                              >
-                                <ItemIcon className="w-4.5 h-4.5 text-sky-600" />
-                                <span>{item.label}</span>
-                              </a>
-                            )
-                          })}
-                        </div>
-                      )}
-                    </div>
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50 rounded-lg transition-colors"
+                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                    >
+                      {link.label}
+                    </a>
                   )
-                })}
-                <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-sky-100/50">
-                  <a href="/contact" className="btn btn-primary text-sm w-full" style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}>
-                    Join Ecosystem
-                  </a>
-                </div>
-              </nav>
+                }
+                return (
+                  <div key={link.label}>
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
+                      className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50 rounded-lg transition-colors"
+                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                    >
+                      <span>{link.label}</span>
+                      <HiChevronDown className={`w-4 h-4 transition-transform ${openDropdown === link.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    {link.submenu && openDropdown === link.label && (
+                      <div className="pl-4 space-y-1 mt-1">
+                        {link.submenu.map((item) => (
+                          <a
+                            key={item.href}
+                            href={item.href}
+                            className="flex items-center gap-2 px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors"
+                            style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}
+                          >
+                            <item.icon className="w-4 h-4" />
+                            <span>{item.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+              <div className="border-t border-sky-100 pt-3 mt-3">
+                <a 
+                  href="/contact" 
+                  className="block w-full btn btn-primary text-center text-sm px-4 py-2"
+                  style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                >
+                  Become A Member
+                </a>
+              </div>
             </div>
           )}
         </div>
