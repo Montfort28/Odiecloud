@@ -1,7 +1,12 @@
+import { useFormSecurity } from '../../hooks/useFormSecurity'
+import { membershipAPI } from '../../utils/api'
 import { useState } from 'react'
 
 const AccessFormSection = () => {
-  const [formData, setFormData] = useState({
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(null)
+  
+  const initialFormData = {
     name: '',
     email: '',
     phone: '',
@@ -12,34 +17,45 @@ const AccessFormSection = () => {
     opportunity: 'Select one',
     problem: '',
     notes: ''
-  })
-
-  const handleChange = (e) => {
-    const { id, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [id]: value
-    }))
   }
 
-  const handleSubmit = (e) => {
+  const {
+    formData,
+    errors,
+    honeypot,
+    handleChange,
+    handleHoneypotChange,
+    validateAndSanitize,
+    resetForm
+  } = useFormSecurity(initialFormData)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Here you would typically send the data to a backend service
-    alert('Thank you for your submission! We will review your request and get back to you soon.')
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      country: '',
-      org: '',
-      role: '',
-      community: 'Select one',
-      opportunity: 'Select one',
-      problem: '',
-      notes: ''
-    })
+    setSubmitError(null)
+    
+    const result = validateAndSanitize()
+    
+    if (!result.isValid) {
+      const firstError = Object.values(result.errors)[0]
+      alert(`Validation Error: ${firstError}`)
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      // Send to backend API
+      const response = await membershipAPI.submitApplication(result.data)
+      
+      alert('Thank you for your submission! We will review your request and get back to you soon.')
+      resetForm()
+    } catch (error) {
+      console.error('Submission error:', error)
+      setSubmitError(error.message || 'Failed to submit application. Please try again.')
+      alert(`Error: ${error.message || 'Failed to submit application. Please try again.'}`)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -107,6 +123,25 @@ const AccessFormSection = () => {
             {/* Content */}
             <div className="relative z-10">
               <form onSubmit={handleSubmit}>
+                {/* Honeypot field - hidden from users, catches bots */}
+                <input
+                  type="text"
+                  name="website_url"
+                  value={honeypot}
+                  onChange={handleHoneypotChange}
+                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
+                {/* Show form-level errors */}
+                {errors.form && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm">
+                    {errors.form}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-2 gap-3.5">
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.1s'}}>
                     <label htmlFor="name" className="text-sm font-bold text-[#28435f]">Full Name</label>
@@ -117,8 +152,10 @@ const AccessFormSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      maxLength="100"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.name && <span className="text-xs text-red-600">{errors.name}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.15s'}}>
@@ -130,8 +167,10 @@ const AccessFormSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      maxLength="255"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.email && <span className="text-xs text-red-600">{errors.email}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.2s'}}>
@@ -143,8 +182,10 @@ const AccessFormSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      maxLength="50"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.phone && <span className="text-xs text-red-600">{errors.phone}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.25s'}}>
@@ -156,8 +197,10 @@ const AccessFormSection = () => {
                       value={formData.country}
                       onChange={handleChange}
                       required
+                      maxLength="100"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.country && <span className="text-xs text-red-600">{errors.country}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.3s'}}>
@@ -169,8 +212,10 @@ const AccessFormSection = () => {
                       value={formData.org}
                       onChange={handleChange}
                       required
+                      maxLength="200"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.org && <span className="text-xs text-red-600">{errors.org}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.35s'}}>
@@ -182,8 +227,10 @@ const AccessFormSection = () => {
                       value={formData.role}
                       onChange={handleChange}
                       required
+                      maxLength="100"
                       className="w-full min-h-12.5 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 hover:border-blue-700/30"
                     />
+                    {errors.role && <span className="text-xs text-red-600">{errors.role}</span>}
                   </div>
 
                   <div className="col-span-2 grid grid-cols-2 gap-3.5 items-end">
@@ -235,8 +282,10 @@ const AccessFormSection = () => {
                       value={formData.problem}
                       onChange={handleChange}
                       required
+                      maxLength="2000"
                       className="w-full min-h-35 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 py-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 resize-none hover:border-blue-700/30"
                     />
+                    {errors.problem && <span className="text-xs text-red-600">{errors.problem}</span>}
                   </div>
 
                   <div className="col-span-2 flex flex-col gap-2 animate-slide-up" style={{animationDelay: '0.55s'}}>
@@ -247,19 +296,31 @@ const AccessFormSection = () => {
                       value={formData.notes}
                       onChange={handleChange}
                       required
+                      maxLength="2000"
                       className="w-full min-h-35 rounded-3xl border border-blue-700/20 bg-white/80 px-3.5 py-3.5 font-inherit text-text outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-700/20 transition-all duration-300 resize-none hover:border-blue-700/30"
                     />
+                    {errors.notes && <span className="text-xs text-red-600">{errors.notes}</span>}
                   </div>
                 </div>
 
                 <div className="mt-4.5 flex gap-3 flex-wrap items-center">
-                  <button type="submit" className="btn btn-primary">
-                    Request Membership Access
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Request Membership Access'}
                   </button>
                   <span className="text-xs text-muted">
                     Submission routes the applicant into a controlled ecosystem qualification process.
                   </span>
                 </div>
+                
+                {submitError && (
+                  <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm">
+                    {submitError}
+                  </div>
+                )}
               </form>
             </div>
           </div>
