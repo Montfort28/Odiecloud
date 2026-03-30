@@ -11,10 +11,6 @@ const Footer = () => {
                 alt="ODIECLOUD²π Logo" 
                 className="w-20 h-auto object-contain"
               />
-              <div>
-                <h4 className="m-0 text-lg font-black text-white">ODIECLOUD²π</h4>
-                <p className="m-0 text-xs text-blue-100/78 font-medium">Governed Digital Infrastructure</p>
-              </div>
             </div>
             <p className="text-blue-100/78 text-sm m-0 leading-relaxed">
               An integrated economic ecosystem connecting businesses, entrepreneurs, investors, and innovators across Africa and the global diaspora.
@@ -102,13 +98,16 @@ const Footer = () => {
                 © Copyright ODERSON Holdings Ltd. All Rights Reserved.
               </p>
             </div>
-            <div className="text-blue-100/78 text-xs md:text-right flex flex-col justify-center">
-              <p className="m-0 mb-1">
-                <strong className="text-white">ODIECLOUD²π</strong> • Digital Governed Infrastructure
-              </p>
-              <p className="m-0">
-                Powered By <strong className="text-white">ODIEBOARD</strong>
-              </p>
+            <div className="text-blue-100/78 md:text-right flex flex-col justify-center items-center md:items-end">
+              <img
+                src="/images/Powered_By_ODIEBOARD.png"
+                alt="Powered by ODIEBOARD"
+                style={{
+                  height: '100px',
+                  width: 'auto',
+                  marginTop: '0.5rem'
+                }}
+              />
             </div>
           </div>
         </div>

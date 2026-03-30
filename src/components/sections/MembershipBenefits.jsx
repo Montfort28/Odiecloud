@@ -33,7 +33,7 @@ const MembershipBenefits = () => {
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-gradient-to-b from-sky-50 to-white" id="benefits">
+    <section className="py-8.5 px-2 bg-linear-to-b from-sky-50 to-white" id="benefits">
       <div className="container">
         <div className="max-w-3xl mx-auto mb-8 text-center animate-slide-up">
           <h2 className="m-0 mb-2.5 text-3xl md:text-4xl leading-tight -tracking-wider font-black text-slate-900">

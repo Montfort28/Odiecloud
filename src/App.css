@@ -40,3 +40,52 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Typography Standards */
+
+/* Section Headings (H2) - Responsive typography */
+h2, .section-heading {
+  font-size: clamp(2rem, 3vw, 3.15rem);
+  font-weight: 900;
+  color: #0c1f32;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Section Descriptions - Text below H2 */
+.section-description {
+  font-size: 1.05rem;
+  color: #587089;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 2rem 0;
+}
+
+/* Card Headings (H3) */
+h3, .card-heading {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #10243d;
+  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Card Body Text & List Items */
+.card-body, .card-text, .card-list {
+  font-size: 0.98rem;
+  color: #587089;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-list li {
+  font-size: 0.98rem;
+  color: #587089;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
