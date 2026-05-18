@@ -44,39 +44,50 @@ const WhoEcosystemServes = () => {
     <section className="py-8.5 px-2 bg-white">
       <div className="container">
         <div className="max-w-4xl mx-auto mb-8 text-center">
-          <h2 className="m-0 mb-4 text-4xl md:text-4xl lg:text-4xl leading-tight -tracking-wider font-black text-slate-900">
+          <h2 className="m-0 mb-2.5 text-2xl md:text-3xl lg:text-4xl leading-tight font-black text-slate-900" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900, letterSpacing: '-0.025em'}}>
             Who the Ecosystem Serves
           </h2>
-          <p className="m-0 text-base md:text-base lg:text-base text-slate-600 leading-relaxed">
+          <p className="m-0 text-sm md:text-base text-slate-600 leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
             ODIECLOUD²π supports a diverse community of participants united by ambition for growth.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
           {participants.map((item, idx) => {
             const Icon = item.icon
             return (
               <div
                 key={idx}
-                className="group text-center"
+                className="group relative overflow-hidden rounded-xl border border-sky-100/50 bg-white hover:shadow-xl transition-all duration-300"
                 style={{animation: `slideUp 0.6s ease-out ${idx * 0.1}s both`}}
               >
-                <div className="w-full h-40 mb-4 rounded-lg overflow-hidden">
+                {/* Image Background */}
+                <div className="relative h-32 overflow-hidden bg-gradient-to-br from-sky-100 to-blue-100">
                   <img 
                     src={`/images/${item.image}`}
                     alt={item.role}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 </div>
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-sky-500/50 transition-all duration-300">
-                  <Icon className="w-7 h-7 text-white" />
+
+                {/* Content */}
+                <div className="relative p-4">
+                  {/* Icon Badge */}
+                  <div className="absolute -top-6 left-4 w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border-2 border-white">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="pt-4">
+                    <h3 className="m-0 mb-1.5 text-base font-black text-slate-900 group-hover:text-sky-700 transition-colors" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>
+                      {item.role}
+                    </h3>
+                    <p className="m-0 text-sm text-slate-600 leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="m-0 mb-2 text-base font-black text-slate-900 group-hover:text-sky-700 transition-colors">
-                  {item.role}
-                </h3>
-                <p className="m-0 text-sm text-slate-600 leading-relaxed">
-                  {item.description}
-                </p>
               </div>
             )
           })}
