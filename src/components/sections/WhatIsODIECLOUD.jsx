@@ -93,12 +93,7 @@ const WhatIsODIECLOUD = () => {
         </div>
 
         {/* Result Text - Below Cards */}
-        <div className="max-w-3xl text-center mt-10 mx-auto">
-          <h3 className="m-0 mb-2.5 text-lg font-black text-slate-900" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>The Result</h3>
-          <p className="m-0 text-sm text-slate-600 leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
-            Through this integrated model, ODIECLOUD²π transforms fragmented opportunity into structured enterprise growth.
-          </p>
-        </div>
+        
       </div>
     </section>
   )

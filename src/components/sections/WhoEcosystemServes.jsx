@@ -6,13 +6,13 @@ const WhoEcosystemServes = () => {
       icon: HiLightningBolt,
       role: 'Entrepreneurs',
       description: 'Launching new ventures with access to capital, mentorship, and market infrastructure.',
-      image: 'digital marketing.jpg'
+      image: 'charles-forerunner-3fPXt37X6UQ-unsplash (2).jpg'
     },
     {
       icon: HiOfficeBuilding,
       role: 'Established Companies',
       description: 'Seeking expansion into new markets and strategic partnership opportunities.',
-      image: 'How to Reduce Network Latency - Bleuwire.jpg'
+      image: 'chuttersnap-d3BFopIpBiU-unsplash (2).jpg'
     },
     {
       icon: HiCurrencyDollar,
@@ -24,13 +24,13 @@ const WhoEcosystemServes = () => {
       icon: HiCode,
       role: 'Technology Developers',
       description: 'Building digital systems and accessing funding, distribution, and collaboration networks.',
-      image: 'image 10.jpg'
+      image: 'israel-andrade-YI_9SivVt_s-unsplash (2).jpg'
     },
     {
       icon: HiBriefcase,
       role: 'Freelancers & Professionals',
       description: 'Offering services and connecting with opportunities across the ecosystem.',
-      image: 'image 16.jpg'
+      image: 'nubelson-fernandes-gTs2w7bu3Qo-unsplash.jpg'
     },
     {
       icon: HiUserGroup,

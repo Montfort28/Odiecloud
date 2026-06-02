@@ -5,64 +5,71 @@ const ProblemSection = () => {
     {
       icon: HiExclamationCircle,
       title: "Businesses Operate Independently",
-      description: "Without integrated systems, scaling across markets becomes inefficient and expensive.",
-      image: 'Generate Images in PicLumen.jpg'
+      description: "Disconnected tools force manual rework, errors, and costly custom integrations. Expanding to new markets multiplies this friction. Open, shared systems make cross-market growth smooth, cheap, and fast.",
+      image: 'floriane-vita-FyD3OWBuXnY-unsplash.jpg'
     },
     {
       icon: HiCurrencyDollar,
       title: "Investors Struggle to Access Opportunities",
-      description: "Capital remains disconnected from real business opportunities due to information asymmetry.",
-      image: '🚀 Transform Your Financial Management with AVCiT! 📈🔒.jpg'
+      description: "Investors can't find vetted, ready-to-scale businesses, while founders can't reach funders. This information gap leaves capital idle or misdirected. Transparent data and standardized deal flow would align money with genuine opportunities.",
+      image: 'compressed-image.jpg'
     },
     {
       icon: HiLightningBolt,
       title: "Entrepreneurs Lack Scalable Infrastructure",
-      description: "Building infrastructure individually drains resources that should focus on growth.",
-      image: 'image 14.jpg'
+      description: "Every entrepreneur reinventing logistics, payments, or support systems wastes capital on non-differentiating work. That money and talent should instead fuel product innovation and customer acquisition. Shared infrastructure frees founders to scale faster without burning resources on the basics.",
+      image: 'microsoft-365-oUbzU87d1Gc-unsplash.jpg'
     },
     {
       icon: HiCode,
       title: "Technology Talent Remains Disconnected",
-      description: "Innovation hubs lack connection to capital markets and commercial opportunities.",
-      image: 'HOME.jpg'
+      description: "Great ideas and skilled engineers stall when no bridge exists to investors or buyers. Without that link, hubs produce prototypes, not profitable companies. Connecting talent directly to capital and commercial partners turns innovation into real economic growth.",
+      image: 'anne-nygard-x07ELaNFt34-unsplash.jpg'
     }
   ]
 
   return (
-    <section className="py-8.5 px-2 bg-linear-to-b from-sky-50 to-white">
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-white via-sky-50/30 to-white">
       <div className="container">
-        <div className="max-w-4xl mx-auto mb-8 text-center">
-          <h2 className="m-0 mb-2.5 text-2xl md:text-3xl lg:text-4xl leading-tight font-black text-slate-900" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900, letterSpacing: '-0.025em'}}>
+        <div className="max-w-4xl mx-auto mb-12 md:mb-16 text-center">
+          <h2 className="m-0 mb-3 text-2xl md:text-3xl lg:text-4xl leading-tight font-black text-slate-900" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900, letterSpacing: '-0.025em'}}>
             The Problem We Solve
           </h2>
-          <p className="m-0 text-sm md:text-base text-slate-600 leading-relaxed mb-6" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>
+          <p className="m-0 text-sm md:text-base text-slate-600 leading-relaxed" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 400}}>
             Africa and its diaspora represent one of the most powerful economic opportunities of the 21st century. Yet the continent's potential is constrained by fragmentation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4.5">
+        <div className="max-w-5xl mx-auto space-y-8 md:space-y-12">
           {problems.map((problem, index) => {
             const Icon = problem.icon
+            const isEven = index % 2 === 0
             return (
               <div 
                 key={index}
-                className="p-5 rounded-xl border border-sky-100/50 bg-gradient-to-br from-white/80 to-sky-50/30 hover:shadow-xl hover:border-sky-300 transition-all duration-300 group"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center"
                 style={{
                   animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
                 }}
               >
-                <div className="w-full h-28 mb-3.5 rounded-lg overflow-hidden">
+                {/* Image - alternates left/right */}
+                <div className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group ${isEven ? 'md:order-2' : 'md:order-1'}`}>
                   <img 
                     src={`/images/${problem.image}`}
                     alt={problem.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-64 md:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="inline-block px-3 py-1.5 rounded-full bg-sky-100/70 text-sky-700 text-xs font-bold mb-2.5 group-hover:bg-sky-200 transition-colors" style={{fontFamily: '"Inter", sans-serif', fontWeight: 700}}>
-                  Challenge
+
+                {/* Content - alternates right/left */}
+                <div className={`space-y-5 md:space-y-7 ${isEven ? 'md:order-1' : 'md:order-2'}`}><h3 className="m-0 mb-3 md:mb-5 text-xl md:text-2xl font-black text-slate-900" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900, lineHeight: 1.2}}>
+                    {problem.title}
+                  </h3>
+
+                  <p className="m-0 text-slate-600 text-sm md:text-base leading-relaxed" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 400}}>
+                    {problem.description}
+                  </p>
                 </div>
-                <h3 className="text-base font-black text-slate-900 mb-1.5 group-hover:text-sky-700 transition-colors m-0" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>{problem.title}</h3>
-                <p className="m-0 text-slate-600 text-sm leading-relaxed" style={{fontFamily: '"Inter", sans-serif', fontWeight: 400}}>{problem.description}</p>
               </div>
             )
           })}

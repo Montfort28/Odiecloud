@@ -6,19 +6,19 @@ const EcosystemAdvantage = () => {
       icon: HiOfficeBuilding,
       title: 'Governance Infrastructure',
       description: 'Businesses integrate into a structured governance framework that enables scalability and compliance.',
-      image: 'Comprehensive Market Research Services_ Empowering Informed Decision-Making.jpg'
+      image: 'ericthriller-i7FamQ67tCg-unsplash.jpg'
     },
     {
       icon: HiShoppingCart,
       title: 'Market Access',
       description: 'Members gain access to a unified marketplace connecting multiple industries and regions.',
-      image: 'image 1.jpg'
+      image: 'annie-spratt-hWJsOnaWTqs-unsplash.jpg'
     },
     {
       icon: HiServer,
       title: 'Technology Infrastructure',
       description: 'Enterprises access cloud systems, collaboration tools, and development platforms.',
-      image: 'Free Photo.jpg'
+      image: 'imgix-klWUhr-wPJ8-unsplash.jpg'
     },
     {
       icon: HiUserGroup,
@@ -30,7 +30,7 @@ const EcosystemAdvantage = () => {
       icon: HiGlobeAlt,
       title: 'Global Expansion',
       description: 'Businesses can scale internationally through ecosystem partnerships.',
-      image: 'The Role of B2B Digital Marketing Agencies in the USA.jpg'
+      image: 'christian-lue-7dEyTJ7-8os-unsplash.jpg'
     }
   ]
 

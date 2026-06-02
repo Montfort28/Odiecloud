@@ -58,10 +58,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b-2 border-sky-100/40 shadow-lg">
       <div className="container">
-        {/* Desktop Layout */}
-        <div className="hidden lg:block py-3">
+        {/* Desktop Layout - XL and above */}
+        <div className="hidden xl:block py-1.5">
           <div className="flex items-center justify-between gap-6">
-            {/* Left: Logo - Clickable */}
+            {/* Left: Logo */}
             <a href="/" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
               <img 
                 src="/images/ODIECLOUD_π_Logo.png" 
@@ -69,12 +69,12 @@ const Header = () => {
                 className="w-18 h-auto object-contain"
               />
               <div>
-                <div className="font-bold text-lg leading-tight text-slate-800" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
-                <div className="text-xs text-slate-600 font-medium mt-0.5" style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}>Governed Digital Infrastructure</div>
+                <div className="font-bold text-lg leading-tight text-slate-800" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}>Governed Digital Infrastructure</div>
               </div>
             </a>
 
-            {/* Middle: Navigation Links - All on one line */}
+            {/* Middle: Navigation Links */}
             <nav className="flex gap-1 items-center flex-nowrap">
               {navLinks.map((link) => {
                 if (link.href && !link.submenu) {
@@ -83,7 +83,7 @@ const Header = () => {
                       key={link.label}
                       href={link.href}
                       className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-sky-700 transition-colors duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-sky-50/50 group"
-                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                      style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       <span>{link.label}</span>
                     </a>
@@ -98,8 +98,9 @@ const Header = () => {
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <button
+                      onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                       className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-sky-700 transition-colors duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-sky-50/50 group"
-                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                      style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       <span>{link.label}</span>
                       <HiChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
@@ -107,7 +108,11 @@ const Header = () => {
                     
                     {/* Dropdown Menu */}
                     {link.submenu && (
-                      <div className="absolute top-full left-0 min-w-72 bg-white/90 backdrop-blur-lg rounded-xl shadow-2xl border border-slate-200/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-3 overflow-hidden z-50">
+                      <div className={`absolute top-full left-0 min-w-72 bg-white/90 backdrop-blur-lg rounded-xl shadow-2xl border border-slate-200/80 transition-all duration-300 mt-3 overflow-hidden z-50 ${
+                        openDropdown === link.label
+                          ? 'opacity-100 visible'
+                          : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'
+                      }`}>
                         <div className="py-3">
                           {link.submenu.map((item, idx) => {
                             const ItemIcon = item.icon
@@ -117,7 +122,7 @@ const Header = () => {
                                 <a
                                   href={item.href}
                                   className="flex items-center gap-3 px-5 py-3 text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-100/60 transition-all duration-200 group/item"
-                                  style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}
+                                  style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}
                                 >
                                   <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-200/50 group-hover/item:bg-slate-300/70 transition-colors">
                                     <ItemIcon className="w-5 h-5 text-slate-700 group-hover/item:text-slate-900 transition-colors" />
@@ -136,12 +141,12 @@ const Header = () => {
               })}
             </nav>
 
-            {/* Right: Become A Member Button + Icons */}
+            {/* Right: Button + Icons */}
             <div className="flex gap-3 items-center shrink-0">
               <a 
                 href="/contact" 
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2"
-                style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
               >
                 Become A Member
               </a>
@@ -162,45 +167,31 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Layout */}
-        <div className="lg:hidden">
-          <div className="flex items-center justify-between gap-4 min-h-17.5 py-3">
+        {/* Mobile/Tablet/iPad Layout with Hamburger - Below XL */}
+        <div className="xl:hidden">
+          <div className="flex items-center justify-between gap-3 py-2">
             <a href="/" className="flex items-center gap-2 shrink-0">
               <img 
                 src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
-                className="w-12 h-auto object-contain"
+                className="w-10 h-auto object-contain"
               />
               <div>
-                <div className="font-bold text-sm leading-tight text-slate-800" style={{fontFamily: '"Inter", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
+                <div className="font-bold text-xs leading-tight text-slate-800" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
               </div>
             </a>
 
-            <div className="flex items-center gap-2">
-              <button 
-                className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
-                title="Languages (coming soon)"
-              >
-                <HiGlobeAlt className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
-              </button>
-              <a 
-                href="/contact"
-                className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
-                title="Contact Us"
-              >
-                <HiMail className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
-              </a>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl hover:bg-sky-50 transition-colors duration-300"
-              >
-                {mobileMenuOpen ? <HiX className="w-6 h-6 text-slate-700" /> : <HiMenu className="w-6 h-6 text-slate-700" />}
-              </button>
-            </div>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2.5 rounded-xl hover:bg-sky-50 transition-colors duration-300"
+              style={{padding: '10px'}}
+            >
+              {mobileMenuOpen ? <HiX className="w-6 h-6 text-slate-700" /> : <HiMenu className="w-6 h-6 text-slate-700" />}
+            </button>
           </div>
 
           {mobileMenuOpen && (
-            <div className="pb-4 border-t border-sky-100 space-y-2">
+            <div className="pb-4 border-t border-sky-100 space-y-2 pt-3">
               {navLinks.map((link) => {
                 if (link.href && !link.submenu) {
                   return (
@@ -208,7 +199,7 @@ const Header = () => {
                       key={link.label}
                       href={link.href}
                       className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50 rounded-lg transition-colors"
-                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                      style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       {link.label}
                     </a>
@@ -219,7 +210,7 @@ const Header = () => {
                     <button
                       onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                       className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50 rounded-lg transition-colors"
-                      style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                      style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       <span>{link.label}</span>
                       <HiChevronDown className={`w-4 h-4 transition-transform ${openDropdown === link.label ? 'rotate-180' : ''}`} />
@@ -231,7 +222,7 @@ const Header = () => {
                             key={item.href}
                             href={item.href}
                             className="flex items-center gap-2 px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors"
-                            style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}
+                            style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}
                           >
                             <item.icon className="w-4 h-4" />
                             <span>{item.label}</span>
@@ -242,14 +233,29 @@ const Header = () => {
                   </div>
                 )
               })}
-              <div className="border-t border-sky-100 pt-3 mt-3">
+              <div className="border-t border-sky-100 pt-3 mt-3 space-y-3">
                 <a 
                   href="/contact" 
                   className="block w-full btn btn-primary text-center text-sm px-4 py-2"
-                  style={{fontFamily: '"Inter", sans-serif', fontWeight: 600}}
+                  style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                 >
                   Become A Member
                 </a>
+                <div className="flex gap-3 justify-center">
+                  <button 
+                    className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
+                    title="Languages (coming soon)"
+                  >
+                    <HiGlobeAlt className="w-5 h-5 text-slate-600 hover:text-sky-700 transition-colors" />
+                  </button>
+                  <a 
+                    href="/contact"
+                    className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
+                    title="Contact Us"
+                  >
+                    <HiMail className="w-5 h-5 text-slate-600 hover:text-sky-700 transition-colors" />
+                  </a>
+                </div>
               </div>
             </div>
           )}
