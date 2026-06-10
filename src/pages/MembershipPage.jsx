@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import MembershipTypes from '../components/sections/MembershipTypes'
 import MembershipBenefits from '../components/sections/MembershipBenefits'
 
@@ -28,9 +29,9 @@ const MembershipPage = () => {
               <p className="m-0 mb-4 text-white/90 text-lg">
                 Choose your membership type and join thousands of ecosystem members accessing global opportunities.
               </p>
-              <a href="/contact" className="btn btn-primary text-lg px-8 py-3">
+              <Link to="/contact" className="btn btn-primary text-lg px-8 py-3">
                 Request Membership Today
-              </a>
+              </Link>
             </div>
           </div>
         </div>

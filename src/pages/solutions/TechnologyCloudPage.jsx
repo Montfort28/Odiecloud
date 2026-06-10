@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { HiServer, HiShieldCheck, HiClock, HiUsers, HiCog, HiSparkles } from 'react-icons/hi'
 
 const TechnologyCloudPage = () => {
@@ -98,12 +99,12 @@ const TechnologyCloudPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Schedule Technology Consultation
-            </a>
-            <a href="/solutions" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/solutions" className="btn btn-secondary px-6 py-3">
               Explore Other Solutions
-            </a>
+            </Link>
           </div>
         </div>
       </section>

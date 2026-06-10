@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SolutionCards from '../components/sections/SolutionCards'
 
 const SolutionsPage = () => {
@@ -29,12 +30,12 @@ const SolutionsPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Request Solution Consultation
-            </a>
+            </Link>
             <a href="/#opportunities" className="btn btn-secondary px-6 py-3">
               Explore Opportunities
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { HiTrendingUp, HiBriefcase, HiUsers, HiChartBar, HiGlobeAlt } from 'react-icons/hi'
 
 const BusinessDevelopmentPage = () => {
@@ -98,12 +99,12 @@ const BusinessDevelopmentPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Start Your Growth Journey
-            </a>
-            <a href="/solutions" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/solutions" className="btn btn-secondary px-6 py-3">
               Explore Other Solutions
-            </a>
+            </Link>
           </div>
         </div>
       </section>

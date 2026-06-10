@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import OpportunitiesCards from '../components/sections/OpportunitiesCards'
 
 const OpportunitiesPage = () => {
@@ -34,12 +35,12 @@ const OpportunitiesPage = () => {
             </div>
 
             <div className="flex gap-3 justify-center flex-wrap">
-              <a href="/contact" className="btn btn-primary px-6 py-3">
+              <Link to="/contact" className="btn btn-primary px-6 py-3">
                 Start Exploring Opportunities
-              </a>
-              <a href="/membership" className="btn btn-secondary px-6 py-3">
+              </Link>
+              <Link to="/membership" className="btn btn-secondary px-6 py-3">
                 View Membership Options
-              </a>
+              </Link>
             </div>
           </div>
         </div>

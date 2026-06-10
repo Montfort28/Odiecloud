@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { HiTruck, HiGlobeAlt, HiChartBar, HiUsers, HiCog, HiSparkles } from 'react-icons/hi'
 
 const TradeOpportunitiesPage = () => {
@@ -98,12 +99,12 @@ const TradeOpportunitiesPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Explore Trade Opportunities
-            </a>
-            <a href="/opportunities" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/opportunities" className="btn btn-secondary px-6 py-3">
               View All Opportunities
-            </a>
+            </Link>
           </div>
         </div>
       </section>

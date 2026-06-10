@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const MembershipCTA = () => {
   return (
     <section className="py-12 px-2 bg-gradient-to-br from-[#0d2438] to-[#081827] -mb-10.5">
@@ -43,9 +45,9 @@ const MembershipCTA = () => {
             </div>
           </div>
 
-          <a href="/membership" className="btn btn-white px-8 py-3 inline-block rounded-full font-black text-sky-700 hover:bg-white/90 transition-all">
+          <Link to="/contact" className="btn btn-white px-8 py-3 inline-block rounded-full font-black text-sky-700 hover:bg-white/90 transition-all">
             Request Access
-          </a>
+          </Link>
         </div>
       </div>
     </section>

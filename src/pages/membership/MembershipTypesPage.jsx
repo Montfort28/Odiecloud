@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { HiUsers, HiTrendingUp, HiBriefcase, HiGlobeAlt, HiStar, HiChartBar } from 'react-icons/hi'
 
 const MembershipTypesPage = () => {
@@ -98,12 +99,12 @@ const MembershipTypesPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Apply for Membership
-            </a>
-            <a href="/membership" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/membership" className="btn btn-secondary px-6 py-3">
               View Member Benefits
-            </a>
+            </Link>
           </div>
         </div>
       </section>

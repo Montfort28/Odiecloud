@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { HiMenu, HiX, HiGlobeAlt, HiMail, HiChevronDown } from 'react-icons/hi'
 import { HiSparkles, HiShoppingCart, HiUsers, HiUserGroup, HiViewGrid, HiChartBar, HiCurrencyDollar, HiBriefcase, HiTrendingUp, HiOfficeBuilding, HiTruck, HiStar, HiClipboardCheck, HiHome } from 'react-icons/hi'
 
@@ -62,7 +63,7 @@ const Header = () => {
         <div className="hidden xl:block py-1.5">
           <div className="flex items-center justify-between gap-6">
             {/* Left: Logo */}
-            <a href="/" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
+            <Link to="/" className="flex items-center gap-3.5 shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
               <img 
                 src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
@@ -72,21 +73,21 @@ const Header = () => {
                 <div className="font-bold text-lg leading-tight text-slate-800" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
                 <div className="text-xs text-slate-600 font-medium mt-0.5" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}>Governed Digital Infrastructure</div>
               </div>
-            </a>
+            </Link>
 
             {/* Middle: Navigation Links */}
             <nav className="flex gap-1 items-center flex-nowrap">
               {navLinks.map((link) => {
                 if (link.href && !link.submenu) {
                   return (
-                    <a
+                    <Link
                       key={link.label}
-                      href={link.href}
+                      to={link.href}
                       className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-sky-700 transition-colors duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-sky-50/50 group"
                       style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       <span>{link.label}</span>
-                    </a>
+                    </Link>
                   )
                 }
                 const IconComponent = link.icon
@@ -119,8 +120,9 @@ const Header = () => {
                             return (
                               <div key={item.href}>
                                 {idx > 0 && <div className="my-1 mx-2 h-px bg-slate-200/50" />}
-                                <a
-                                  href={item.href}
+                                <Link
+                                  to={item.href}
+                                  onClick={() => setOpenDropdown(null)}
                                   className="flex items-center gap-3 px-5 py-3 text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-100/60 transition-all duration-200 group/item"
                                   style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}
                                 >
@@ -129,7 +131,7 @@ const Header = () => {
                                   </div>
                                   <span className="flex-1">{item.label}</span>
                                   <div className="w-1.5 h-1.5 rounded-full bg-slate-300/0 group-hover/item:bg-slate-400 transition-all" />
-                                </a>
+                                </Link>
                               </div>
                             )
                           })}
@@ -143,26 +145,26 @@ const Header = () => {
 
             {/* Right: Button + Icons */}
             <div className="flex gap-3 items-center shrink-0">
-              <a 
-                href="/contact" 
+              <Link 
+                to="/contact" 
                 className="btn btn-primary transform hover:scale-105 active:scale-95 transition-transform duration-200 text-sm px-4 py-2"
                 style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
               >
                 Become A Member
-              </a>
+              </Link>
               <button 
                 className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
                 title="Languages (coming soon)"
               >
                 <HiGlobeAlt className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
               </button>
-              <a 
-                href="/contact"
+              <Link 
+                to="/contact"
                 className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
                 title="Contact Us"
               >
                 <HiMail className="w-5 h-5 text-slate-700 hover:text-sky-700 transition-colors" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -170,7 +172,7 @@ const Header = () => {
         {/* Mobile/Tablet/iPad Layout with Hamburger - Below XL */}
         <div className="xl:hidden">
           <div className="flex items-center justify-between gap-3 py-2">
-            <a href="/" className="flex items-center gap-2 shrink-0">
+            <Link to="/" className="flex items-center gap-2 shrink-0">
               <img 
                 src="/images/ODIECLOUD_π_Logo.png" 
                 alt="ODIECLOUD²π Logo" 
@@ -179,7 +181,7 @@ const Header = () => {
               <div>
                 <div className="font-bold text-xs leading-tight text-slate-800" style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 900}}>ODIECLOUD²π</div>
               </div>
-            </a>
+            </Link>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -195,14 +197,15 @@ const Header = () => {
               {navLinks.map((link) => {
                 if (link.href && !link.submenu) {
                   return (
-                    <a
+                    <Link
                       key={link.label}
-                      href={link.href}
+                      to={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50 rounded-lg transition-colors"
                       style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   )
                 }
                 return (
@@ -218,15 +221,16 @@ const Header = () => {
                     {link.submenu && openDropdown === link.label && (
                       <div className="pl-4 space-y-1 mt-1">
                         {link.submenu.map((item) => (
-                          <a
+                          <Link
                             key={item.href}
-                            href={item.href}
+                            to={item.href}
+                            onClick={() => { setMobileMenuOpen(false); setOpenDropdown(null) }}
                             className="flex items-center gap-2 px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors"
                             style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 500}}
                           >
                             <item.icon className="w-4 h-4" />
                             <span>{item.label}</span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -234,13 +238,14 @@ const Header = () => {
                 )
               })}
               <div className="border-t border-sky-100 pt-3 mt-3 space-y-3">
-                <a 
-                  href="/contact" 
+                <Link 
+                  to="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block w-full btn btn-primary text-center text-sm px-4 py-2"
                   style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                 >
                   Become A Member
-                </a>
+                </Link>
                 <div className="flex gap-3 justify-center">
                   <button 
                     className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
@@ -248,13 +253,14 @@ const Header = () => {
                   >
                     <HiGlobeAlt className="w-5 h-5 text-slate-600 hover:text-sky-700 transition-colors" />
                   </button>
-                  <a 
-                    href="/contact"
+                  <Link 
+                    to="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="p-2.5 rounded-lg hover:bg-sky-100 transition-colors duration-300"
                     title="Contact Us"
                   >
                     <HiMail className="w-5 h-5 text-slate-600 hover:text-sky-700 transition-colors" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

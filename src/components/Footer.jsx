@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <footer className="bg-linear-to-b from-[#0d2438] to-[#081827] text-blue-100 mt-10.5 pt-12 pb-4.5">
@@ -24,16 +26,16 @@ const Footer = () => {
               <div>
                 <h4 className="m-0 mb-3.5 text-base font-black text-white uppercase tracking-wider">Ecosystem</h4>
                 <div className="space-y-2">
-                  <a href="/ecosystem" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Ecosystem Overview</a>
-                  <a href="/opportunities#business" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Business Opportunities</a>
-                  <a href="/opportunities#investment" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Career Opportunities</a>
-                  <a href="/solutions#tech" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Technology Partnerships (Tech Hub)</a>
-                  <a href="/opportunities#manufacturing" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Freelance Technology Projects</a>
-                  <a href="/solutions#marketplace" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Unified Marketplace</a>
-                  <a href="/membership" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Channel Partner Network</a>
-                  <a href="/membership#types" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Internship Networks</a>
-                  <a href="/#profit-centres" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Entrepreneurship</a>
-                  <a href="/solutions" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Strategic Partnerships</a>
+                  <Link to="/ecosystem" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Ecosystem Overview</Link>
+                  <Link to="/opportunities/business" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Business Opportunities</Link>
+                  <Link to="/opportunities/investment" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Career Opportunities</Link>
+                  <Link to="/solutions/technology-cloud" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Technology Partnerships (Tech Hub)</Link>
+                  <Link to="/opportunities/manufacturing" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Freelance Technology Projects</Link>
+                  <Link to="/solutions/marketplace-trade" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Unified Marketplace</Link>
+                  <Link to="/membership" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Channel Partner Network</Link>
+                  <Link to="/membership/types" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Internship Networks</Link>
+                  <Link to="/ecosystem/profit-centres" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Entrepreneurship</Link>
+                  <Link to="/solutions/business-development" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Strategic Partnerships</Link>
                 </div>
               </div>
 
@@ -65,13 +67,13 @@ const Footer = () => {
               <div>
                 <h4 className="m-0 mb-3.5 text-base font-black text-white uppercase tracking-wider">Legal & Info</h4>
                 <div className="space-y-2">
-                  <a href="#legal" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Privacy Policy</a>
-                  <a href="#legal" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Terms of Service</a>
-                  <a href="#legal" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Disclaimer</a>
-                  <a href="#legal" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Compliance</a>
-                  <a href="#about" className="block text-blue-100/78 text-sm hover:text-white transition-colors">About</a>
-                  <a href="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Contact</a>
-                  <a href="/questions" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Questions and Answers</a>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Privacy Policy</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Terms of Service</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Disclaimer</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Compliance</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">About</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Contact</Link>
+                  <Link to="/questions" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Questions and Answers</Link>
                 </div>
               </div>
 
@@ -79,10 +81,10 @@ const Footer = () => {
               <div>
                 <h4 className="m-0 mb-3.5 text-base font-black text-white uppercase tracking-wider">Quick Actions</h4>
                 <div className="space-y-2">
-                  <a href="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Become a Member</a>
-                  <a href="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Become a Tech Freelancer</a>
-                  <a href="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Become a Marketer</a>
-                  <a href="/opportunities" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Explore Opportunities</a>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Become a Member</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Become a Tech Freelancer</Link>
+                  <Link to="/contact" className="block text-blue-100/78 text-sm hover:text-white transition-colors">Become a Marketer</Link>
+                  <Link to="/opportunities/business" className="block text-blue-100/78 text-sm hover:text-white transition-colors font-medium">Explore Opportunities</Link>
                 </div>
               </div>
             </div>

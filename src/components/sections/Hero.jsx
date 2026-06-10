@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Hero = () => {
   return (
     <section className="w-full overflow-hidden relative flex flex-col" id="overview" style={{
@@ -82,21 +84,21 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 md:pt-6">
-                <a 
-                  href="/contact" 
+                <Link 
+                  to="/contact" 
                   className="inline-flex items-center justify-center px-6 py-3 md:px-7 md:py-3.5 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 text-sm md:text-base"
                   style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                 >
                   Request Access
-                </a>
-                <a 
-                  href="/membership" 
+                </Link>
+                <Link 
+                  to="/membership" 
                   className="inline-flex items-center justify-center px-6 py-3 md:px-7 md:py-3.5 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-2xl border border-white/40 transition-all duration-200 transform hover:scale-105 active:scale-95 text-sm md:text-base"
                   style={{fontFamily: '"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontWeight: 600}}
                 >
                   <span className="hidden sm:inline">Become a Member</span>
                   <span className="sm:hidden">Become Member</span>
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { HiChevronRight } from 'react-icons/hi'
 
@@ -25,10 +26,10 @@ const AnnouncementBar = () => {
         <p className="m-0 text-sm md:text-base font-medium" style={{fontFamily: '"Inter", sans-serif', fontWeight: 500}}>
           {announcements[currentIndex]}
         </p>
-        <a href="/contact" className="flex items-center gap-1 ml-2 hover:text-sky-100 transition-colors text-white font-semibold text-sm md:text-base">
+        <Link to="/contact" className="flex items-center gap-1 ml-2 hover:text-sky-100 transition-colors text-white font-semibold text-sm md:text-base">
           Learn More
           <HiChevronRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </div>
   )

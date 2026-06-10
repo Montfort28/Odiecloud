@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import WhyWebsite from '../../components/sections/WhyWebsite'
 
 const OverviewPage = () => {
@@ -29,12 +30,12 @@ const OverviewPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/contact" className="btn btn-primary px-6 py-3">
+            <Link to="/contact" className="btn btn-primary px-6 py-3">
               Get Involved
-            </a>
-            <a href="/ecosystem" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/ecosystem" className="btn btn-secondary px-6 py-3">
               Back to Ecosystem Overview
-            </a>
+            </Link>
           </div>
         </div>
       </section>

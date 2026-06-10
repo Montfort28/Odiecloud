@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import ProfitCentres from '../../components/sections/ProfitCentres'
 
 const ProfitCentresPage = () => {
@@ -29,12 +30,12 @@ const ProfitCentresPage = () => {
             </p>
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="/opportunities" className="btn btn-primary px-6 py-3">
+            <Link to="/opportunities" className="btn btn-primary px-6 py-3">
               View Opportunities
-            </a>
-            <a href="/ecosystem" className="btn btn-secondary px-6 py-3">
+            </Link>
+            <Link to="/ecosystem" className="btn btn-secondary px-6 py-3">
               Back to Ecosystem Overview
-            </a>
+            </Link>
           </div>
         </div>
       </section>
